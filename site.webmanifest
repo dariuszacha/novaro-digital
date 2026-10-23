@@ -1,0 +1,9 @@
+{
+  "name": "Novaro Digital",
+  "short_name": "Novaro",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#fffaf0",
+  "theme_color": "#d4ff3a",
+  "icons": [{ "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

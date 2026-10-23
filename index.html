@@ -1,0 +1,1095 @@
+<!doctype html>
+<html lang="lt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- ========== KEISTI: pavadinimas, aprašymas, domenas ========== -->
+  <title>Novaro Digital – svetainės, Google ir Facebook reklama, automatizacijos</title>
+  <meta name="description" content="Kuriame svetaines, valdome Google Ads ir Meta reklamą, automatizuojame verslo procesus ir pritraukiame užklausų. Skaitmeninė rinkodara nuo strategijos iki rezultatų.">
+  <meta name="author" content="Novaro Digital">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://novarodigital.lt/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Novaro Digital">
+  <meta property="og:locale" content="lt_LT">
+  <meta property="og:url" content="https://novarodigital.lt/">
+  <meta property="og:title" content="Novaro Digital – daugiau klientų iš interneto">
+  <meta property="og:description" content="Svetainės, Google Ads, Facebook ir Instagram reklama, automatizacijos ir užklausų generavimas.">
+  <meta property="og:image" content="https://novarodigital.lt/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#d4ff3a">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "name": "Novaro Digital",
+        "url": "https://novarodigital.lt/",
+        "email": "info@novarodigital.lt",
+        "telephone": "+37061234567",
+        "address": { "@type": "PostalAddress", "addressLocality": "Vilnius", "addressCountry": "LT" },
+        "areaServed": "LT",
+        "knowsAbout": ["Svetainių kūrimas", "Google Ads", "Facebook reklama", "Instagram reklama", "SEO", "Verslo procesų automatizavimas", "Užklausų generavimas"]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Kiek kainuoja jūsų paslaugos?", "acceptedAnswer": { "@type": "Answer", "text": "Reklamos valdymas – nuo 390 € per mėnesį vienam kanalui. Nukreipimo puslapis – nuo 690 €, įmonės svetainė – nuo 1 490 €, automatizacijos – nuo 450 €." } },
+          { "@type": "Question", "name": "Koks minimalus reklamos biudžetas?", "acceptedAnswer": { "@type": "Answer", "text": "Rekomenduojame pradėti nuo 500 € per mėnesį vienam kanalui. Šis biudžetas mokamas tiesiai Google ar Meta." } },
+          { "@type": "Question", "name": "Per kiek laiko pamatysiu rezultatus?", "acceptedAnswer": { "@type": "Answer", "text": "Pirmosios užklausos iš reklamos dažniausiai ateina per 1–2 savaites, o stabilūs rezultatai – per 2–3 mėnesius optimizavimo." } },
+          { "@type": "Question", "name": "Ar reikia ilgalaikės sutarties?", "acceptedAnswer": { "@type": "Answer", "text": "Ne. Dirbame mėnesiais – jei nesate patenkinti, galite nutraukti bet kada." } }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --ink: #0e0e10;
+      --ink-soft: #3d3d45;
+      --paper: #fffaf0;
+      --white: #ffffff;
+      --lime: #d4ff3a;
+      --pink: #ff3d8b;
+      --blue: #3d5afe;
+      --orange: #ff8a1f;
+      --violet: #7c3aed;
+      --sky: #bfe6ff;
+      --radius: 24px;
+      --border: 2.5px solid var(--ink);
+      --shadow: 6px 6px 0 var(--ink);
+      --display: "Unbounded", "Arial Black", system-ui, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+    body {
+      margin: 0; font-family: "Inter", system-ui, -apple-system, Segoe UI, sans-serif; font-size: 17px; line-height: 1.6;
+      color: var(--ink); background: var(--paper); -webkit-font-smoothing: antialiased; overflow-x: hidden;
+    }
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; }
+    h1, h2, h3 { font-family: var(--display); line-height: 1.08; margin: 0 0 .5em; letter-spacing: -.03em; font-weight: 800; }
+    h1 { font-size: clamp(2.1rem, 5.4vw, 4.2rem); }
+    h2 { font-size: clamp(1.9rem, 4.2vw, 3.3rem); }
+    h3 { font-size: 1.15rem; font-weight: 600; letter-spacing: -.01em; }
+    p { margin: 0 0 1em; }
+    ::selection { background: var(--lime); color: var(--ink); }
+
+    .wrap { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .section { padding: 110px 0; position: relative; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px; font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+      border: var(--border); border-radius: 999px; padding: 6px 14px; background: var(--white); margin-bottom: 20px;
+    }
+    .eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--pink); }
+    .lead { font-size: 1.18rem; color: var(--ink-soft); max-width: 640px; }
+    .center { text-align: center; }
+    .center .lead { margin-left: auto; margin-right: auto; }
+    .skip { position: absolute; left: -9999px; }
+    .skip:focus { left: 16px; top: 16px; z-index: 200; background: var(--white); padding: 8px 14px; border: var(--border); border-radius: 8px; }
+    :focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+
+    .mark { background: var(--lime); padding: 0 .18em; border-radius: .2em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+    .mark-pink { background: var(--pink); color: var(--white); }
+    .scribble { position: relative; white-space: nowrap; }
+    .scribble svg { position: absolute; left: -4%; bottom: -.18em; width: 108%; height: .4em; color: var(--pink); }
+    .scribble path { stroke-dasharray: 400; stroke-dashoffset: 400; transition: stroke-dashoffset 1.2s ease .3s; }
+    .visible .scribble path, .scribble.visible path { stroke-dashoffset: 0; }
+
+    /* ---------- Mygtukai ---------- */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 15px 28px; border-radius: 999px;
+      font: inherit; font-weight: 700; text-decoration: none; border: var(--border); cursor: pointer; background: var(--white); color: var(--ink);
+      box-shadow: 4px 4px 0 var(--ink); transition: transform .15s ease, box-shadow .15s ease, background .2s;
+    }
+    .btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ink); }
+    .btn:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--ink); }
+    .btn:disabled { opacity: .6; cursor: wait; transform: none; }
+    .btn-lime { background: var(--lime); }
+    .btn-pink { background: var(--pink); color: var(--white); }
+    .btn-dark { background: var(--ink); color: var(--white); box-shadow: 4px 4px 0 var(--pink); }
+    .btn-dark:hover { box-shadow: 6px 6px 0 var(--pink); }
+    .btn .arrow { transition: transform .2s; }
+    .btn:hover .arrow { transform: translateX(4px); }
+
+    /* ---------- Progreso juosta ---------- */
+    .progress { position: fixed; top: 0; left: 0; right: 0; height: 5px; z-index: 120; transform-origin: 0 50%; transform: scaleX(0);
+      background: linear-gradient(90deg, var(--lime), var(--pink), var(--blue)); }
+
+    /* ---------- Navigacija ---------- */
+    .nav-bar { position: fixed; top: 14px; left: 0; right: 0; z-index: 100; pointer-events: none; }
+    .nav {
+      pointer-events: auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 66px; padding: 0 10px 0 18px;
+      background: var(--white); border: var(--border); border-radius: 999px; box-shadow: 4px 4px 0 var(--ink); transition: box-shadow .3s;
+    }
+    .nav-bar.is-sticky .nav { box-shadow: 4px 4px 0 var(--pink); }
+    .logo { display: flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 800; font-size: 1.05rem; text-decoration: none; letter-spacing: -.02em; }
+    .logo-mark { width: 36px; height: 36px; border-radius: 10px; background: var(--lime); border: var(--border); display: grid; place-items: center; font-size: .95rem; transform: rotate(-6deg); transition: transform .3s; }
+    .logo:hover .logo-mark { transform: rotate(6deg) scale(1.08); }
+    .nav-links { display: flex; gap: 4px; list-style: none; margin: 0; padding: 0; }
+    .nav-links a { display: block; text-decoration: none; font-weight: 600; font-size: .93rem; padding: 8px 14px; border-radius: 999px; transition: background .2s; }
+    .nav-links a:hover { background: var(--lime); }
+    .nav .btn { padding: 10px 20px; font-size: .92rem; box-shadow: 3px 3px 0 var(--ink); }
+    .menu-toggle { display: none; background: var(--lime); border: var(--border); border-radius: 50%; width: 46px; height: 46px; place-items: center; cursor: pointer; }
+
+    .drawer { position: fixed; inset: 0; z-index: 150; visibility: hidden; }
+    .drawer.open { visibility: visible; }
+    .drawer-backdrop { position: absolute; inset: 0; background: rgba(14, 14, 16, .55); opacity: 0; transition: opacity .3s; }
+    .drawer.open .drawer-backdrop { opacity: 1; }
+    .drawer-panel {
+      position: absolute; top: 0; right: 0; bottom: 0; width: min(340px, 88vw); background: var(--lime); border-left: var(--border);
+      padding: 24px; transform: translateX(100%); transition: transform .35s cubic-bezier(.2, .8, .2, 1); display: flex; flex-direction: column; gap: 6px;
+    }
+    .drawer.open .drawer-panel { transform: none; }
+    .drawer-panel a { font-family: var(--display); font-weight: 800; text-decoration: none; font-size: 1.4rem; padding: 12px 0; border-bottom: 2px solid var(--ink); }
+    .drawer-close { align-self: flex-end; background: var(--white); border: var(--border); border-radius: 50%; width: 46px; height: 46px; font-size: 1.6rem; line-height: 1; cursor: pointer; margin-bottom: 12px; }
+
+    /* ---------- Hero ---------- */
+    .hero { padding: 150px 0 90px; position: relative; overflow: hidden; }
+    .hero::before {
+      content: ""; position: absolute; inset: 0; z-index: -2; opacity: .5;
+      background-image: radial-gradient(var(--ink) 1px, transparent 1px); background-size: 26px 26px;
+      -webkit-mask-image: radial-gradient(ellipse at 70% 30%, #000 0%, transparent 70%); mask-image: radial-gradient(ellipse at 70% 30%, #000 0%, transparent 70%);
+    }
+    .blob { position: absolute; z-index: -1; width: 520px; height: 520px; border-radius: 50%; filter: blur(70px); opacity: .55; pointer-events: none; }
+    .blob-1 { background: var(--lime); top: -120px; right: -80px; }
+    .blob-2 { background: var(--pink); bottom: -200px; left: -160px; opacity: .3; }
+    .cursor-blob { background: var(--sky); width: 360px; height: 360px; left: 0; top: 0; opacity: 0; transition: opacity .4s; }
+    .hero:hover .cursor-blob { opacity: .7; }
+
+    .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 48px; align-items: center; }
+    .rotator-wrap { display: inline-block; position: relative; vertical-align: bottom; }
+    .rotator {
+      display: inline-block; background: var(--pink); color: var(--white); padding: 0 .25em; border-radius: .18em; border: var(--border);
+      box-shadow: 5px 5px 0 var(--ink); transform: rotate(-2deg); transition: opacity .3s, transform .3s;
+    }
+    .rotator.out { opacity: 0; transform: rotate(-2deg) translateY(.3em); }
+    .hero p.lead { margin-top: 26px; font-size: 1.22rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+    .platforms { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 40px; }
+    .platforms > span { font-weight: 600; font-size: .9rem; margin-right: 4px; }
+    .chip { font-size: .82rem; font-weight: 700; background: var(--white); border: 2px solid var(--ink); padding: 5px 12px; border-radius: 999px; transition: background .2s, transform .2s; }
+    .chip:hover { background: var(--lime); transform: translateY(-2px) rotate(-2deg); }
+
+    .hero-visual { position: relative; height: 500px; }
+    .float { position: absolute; inset: 0; pointer-events: none; animation: float 6s ease-in-out infinite; }
+    .float .mock { pointer-events: auto; }
+    .float-2 { animation-delay: -2s; }
+    .float-3 { animation-delay: -4s; }
+    @keyframes float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -12px; } }
+    .mock { position: absolute; background: var(--white); border: var(--border); border-radius: 20px; box-shadow: var(--shadow); padding: 18px 20px; }
+    .mock-label { display: flex; align-items: center; gap: 8px; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 10px; }
+    .dot { width: 10px; height: 10px; border-radius: 50%; border: 2px solid var(--ink); }
+    .ad-google { top: 10px; left: 0; width: 82%; transform: rotate(-3deg); }
+    .ad-google .ad-url { font-size: .78rem; color: #1a7f37; }
+    .ad-google .ad-title { font-weight: 700; color: #1a0dab; font-size: 1.02rem; line-height: 1.3; margin: 2px 0 6px; }
+    .ad-google .ad-desc { font-size: .82rem; color: var(--ink-soft); margin: 0; }
+    .ad-stats { display: flex; gap: 8px; margin-top: 12px; }
+    .ad-stats span { font-size: .75rem; font-weight: 700; background: var(--lime); border: 2px solid var(--ink); border-radius: 999px; padding: 2px 10px; }
+    .ad-meta { top: 190px; right: 0; width: 64%; background: var(--pink); color: var(--white); transform: rotate(4deg); }
+    .ad-meta strong { font-family: var(--display); font-size: 2.2rem; display: block; line-height: 1; }
+    .mini-bars { display: flex; align-items: flex-end; gap: 6px; height: 62px; margin-top: 14px; }
+    .mini-bars i { flex: 1; background: var(--white); border: 2px solid var(--ink); border-radius: 4px 4px 0 0; height: 0; transition: height 1s cubic-bezier(.2, .8, .2, 1); }
+    .toast { bottom: 30px; left: 4%; width: 78%; background: var(--lime); display: flex; gap: 14px; align-items: center; transform: rotate(-1.5deg); }
+    .toast-icon { flex: none; width: 46px; height: 46px; border-radius: 14px; background: var(--white); border: var(--border); display: grid; place-items: center; font-size: 1.3rem; }
+    .toast-text { transition: opacity .3s, transform .3s; }
+    .toast-text.out { opacity: 0; transform: translateY(8px); }
+    .toast-text b { display: block; font-size: .95rem; }
+    .toast-text span { font-size: .82rem; color: var(--ink-soft); }
+    .badge { position: absolute; top: -26px; right: 4%; width: 124px; height: 124px; z-index: 3; text-decoration: none; }
+    .badge-circle { position: absolute; inset: 0; border-radius: 50%; background: var(--blue); border: var(--border); box-shadow: 4px 4px 0 var(--ink); }
+    .badge svg.ring { position: absolute; inset: 0; animation: spin 14s linear infinite; }
+    .badge-arrow { position: absolute; inset: 0; display: grid; place-items: center; color: var(--white); font-size: 2rem; transition: transform .3s; }
+    .badge:hover .badge-arrow { transform: rotate(-45deg); }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ---------- Bėganti juosta ---------- */
+    .marquees { position: relative; padding: 40px 0; overflow: hidden; }
+    .marquee { border-block: var(--border); overflow: hidden; white-space: nowrap; padding: 16px 0; }
+    .marquee-1 { background: var(--ink); color: var(--lime); transform: rotate(-2deg); position: relative; z-index: 2; }
+    .marquee-2 { background: var(--lime); color: var(--ink); transform: rotate(1.5deg); margin-top: -10px; }
+    .marquee-track { display: inline-flex; animation: marquee 28s linear infinite; }
+    .marquee-2 .marquee-track { animation-direction: reverse; animation-duration: 34s; }
+    .marquee-track span { font-family: var(--display); font-weight: 800; font-size: clamp(1.3rem, 2.6vw, 2rem); padding: 0 22px; letter-spacing: -.02em; }
+    .marquee-track span:nth-child(even) { color: var(--pink); }
+    @keyframes marquee { to { transform: translateX(-50%); } }
+
+    /* ---------- Skaičiai ---------- */
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .stat { border: var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 28px 24px; transition: transform .2s; }
+    .stat:hover { transform: rotate(-1.5deg) translateY(-4px); }
+    .stat:nth-child(1) { background: var(--lime); }
+    .stat:nth-child(2) { background: var(--pink); color: var(--white); }
+    .stat:nth-child(3) { background: var(--blue); color: var(--white); }
+    .stat:nth-child(4) { background: var(--orange); }
+    .stat strong { display: block; font-family: var(--display); font-size: clamp(1.5rem, 3vw, 2.5rem); line-height: 1; margin-bottom: 10px; white-space: nowrap; }
+    .stat span { font-weight: 600; }
+
+    /* ---------- Paslaugos ---------- */
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 56px; }
+    .card {
+      position: relative; border: var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 30px; display: flex; flex-direction: column;
+      transition: transform .2s ease, box-shadow .2s ease; transform-style: preserve-3d; will-change: transform;
+    }
+    .card:hover { box-shadow: 10px 10px 0 var(--ink); }
+    .card:nth-child(1) { background: var(--lime); }
+    .card:nth-child(2) { background: var(--white); }
+    .card:nth-child(3) { background: var(--pink); color: var(--white); }
+    .card:nth-child(4) { background: var(--sky); }
+    .card:nth-child(5) { background: var(--violet); color: var(--white); }
+    .card:nth-child(6) { background: var(--orange); }
+    .card-num { position: absolute; top: 22px; right: 26px; font-family: var(--display); font-weight: 800; font-size: .95rem; opacity: .7; }
+    .card-icon { width: 58px; height: 58px; border-radius: 16px; background: var(--white); color: var(--ink); border: var(--border); display: grid; place-items: center; margin-bottom: 22px; transition: transform .3s; }
+    .card:hover .card-icon { transform: rotate(-8deg) scale(1.06); }
+    .card h3 { font-size: 1.25rem; }
+    .card p { margin: 0 0 18px; opacity: .9; }
+    .card ul { list-style: none; padding: 0; margin: auto 0 0; display: flex; flex-wrap: wrap; gap: 6px; }
+    .card li { font-size: .8rem; font-weight: 700; border: 2px solid currentColor; border-radius: 999px; padding: 3px 10px; }
+
+    /* ---------- Kodėl mes ---------- */
+    .dark { background: var(--ink); color: var(--white); }
+    .dark .eyebrow { background: var(--ink); color: var(--white); border-color: var(--white); }
+    .dark .eyebrow::before { background: var(--lime); }
+    .dark .lead { color: #c9c9d1; }
+    .about { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .dash { border: 2.5px solid var(--white); border-radius: var(--radius); background: #1a1a1f; padding: 28px; box-shadow: 8px 8px 0 var(--lime); }
+    .dash-head { display: flex; justify-content: space-between; align-items: center; font-size: .85rem; color: #c9c9d1; margin-bottom: 20px; }
+    .dash-head b { color: var(--ink); background: var(--lime); padding: 2px 10px; border-radius: 999px; font-size: .78rem; }
+    .dash-kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
+    .dash-kpis div { border-radius: 14px; padding: 14px; color: var(--ink); }
+    .dash-kpis div:nth-child(1) { background: var(--lime); }
+    .dash-kpis div:nth-child(2) { background: var(--pink); color: var(--white); }
+    .dash-kpis div:nth-child(3) { background: var(--sky); }
+    .dash-kpis span { display: block; font-size: .74rem; font-weight: 600; }
+    .dash-kpis strong { font-family: var(--display); font-size: 1.3rem; }
+    .bars { display: flex; align-items: flex-end; gap: 8px; height: 140px; }
+    .bars i { flex: 1; background: linear-gradient(to top, var(--blue), var(--pink)); border-radius: 6px 6px 2px 2px; transform-origin: bottom; transform: scaleY(0); transition: transform .8s cubic-bezier(.2, .8, .2, 1); }
+    .dash.visible .bars i { transform: scaleY(1); }
+    .dash-note { font-size: .74rem; color: #9a9aa6; margin: 12px 0 0; }
+    .checks { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 16px; }
+    .checks li { display: flex; gap: 14px; align-items: flex-start; font-size: 1.05rem; }
+    .checks li::before { content: "✓"; flex: none; width: 30px; height: 30px; border-radius: 50%; background: var(--lime); color: var(--ink); display: grid; place-items: center; font-weight: 800; margin-top: 1px; }
+
+    /* ---------- Rezultatai ---------- */
+    .work { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 56px; }
+    .work-item { border: var(--border); border-radius: var(--radius); background: var(--white); box-shadow: var(--shadow); overflow: hidden; display: flex; flex-direction: column; transition: transform .2s; }
+    .work-item:hover { transform: translateY(-6px) rotate(-.6deg); }
+    .work-top { padding: 28px 28px 22px; border-bottom: var(--border); }
+    .work-item:nth-child(1) .work-top { background: var(--lime); }
+    .work-item:nth-child(2) .work-top { background: var(--pink); color: var(--white); }
+    .work-item:nth-child(3) .work-top { background: var(--blue); color: var(--white); }
+    .work-metric { font-family: var(--display); font-size: 3.2rem; font-weight: 800; line-height: 1; letter-spacing: -.04em; }
+    .work-metric-label { font-weight: 700; margin-top: 8px; }
+    .work-body { padding: 24px 28px 28px; display: flex; flex-direction: column; flex: 1; }
+    .work-body p { color: var(--ink-soft); margin: 0 0 18px; font-size: .96rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; }
+    .tag { font-size: .76rem; font-weight: 700; border: 2px solid var(--ink); padding: 3px 10px; border-radius: 999px; }
+
+    /* ---------- Skaičiuoklė ---------- */
+    .calc-sec { background: var(--blue); color: var(--white); overflow: hidden; }
+    .calc-sec .eyebrow { color: var(--ink); }
+    .calc-sec .lead { color: #e3e8ff; }
+    .calc { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 52px; border: var(--border); border-radius: var(--radius); box-shadow: 8px 8px 0 var(--ink); overflow: hidden; }
+    .calc-inputs { background: var(--white); color: var(--ink); padding: 36px; display: grid; gap: 26px; }
+    .calc-field label { display: flex; justify-content: space-between; align-items: baseline; font-weight: 700; margin-bottom: 10px; }
+    .calc-field output { font-family: var(--display); font-size: 1.1rem; background: var(--lime); border: 2px solid var(--ink); border-radius: 999px; padding: 2px 12px; }
+    .calc-field select, .calc-field input[type="number"] { width: 100%; font: inherit; padding: 12px 14px; border: var(--border); border-radius: 12px; background: var(--paper); }
+    input[type="range"] { width: 100%; accent-color: var(--pink); height: 28px; cursor: pointer; }
+    .calc-results { background: var(--lime); color: var(--ink); padding: 36px; display: flex; flex-direction: column; border-left: var(--border); }
+    .calc-results h3 { font-size: 1rem; }
+    .results-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 8px 0 22px; }
+    .res { background: var(--white); border: var(--border); border-radius: 18px; padding: 18px; }
+    .res span { display: block; font-size: .82rem; font-weight: 600; color: var(--ink-soft); }
+    .res strong { font-family: var(--display); font-size: clamp(1.4rem, 2.6vw, 2rem); line-height: 1.1; display: block; margin-top: 4px; }
+    .res-big { grid-column: 1 / -1; background: var(--ink); color: var(--white); }
+    .res-big span { color: #c9c9d1; }
+    .res-big strong { color: var(--lime); font-size: clamp(2rem, 4vw, 3rem); }
+    .calc-note { font-size: .8rem; color: var(--ink-soft); margin: 0 0 20px; }
+    .calc-results .btn { margin-top: auto; align-self: flex-start; }
+
+    /* ---------- Procesas ---------- */
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; margin-top: 56px; counter-reset: step; list-style: none; padding: 0; position: relative; }
+    .steps::before { content: ""; position: absolute; top: 34px; left: 8%; right: 8%; border-top: 3px dashed var(--ink); z-index: 0; }
+    .steps li { position: relative; z-index: 1; counter-increment: step; text-align: center; }
+    .steps li::before {
+      content: counter(step); display: grid; place-items: center; width: 70px; height: 70px; margin: 0 auto 20px; border-radius: 50%;
+      border: var(--border); box-shadow: 4px 4px 0 var(--ink); font-family: var(--display); font-weight: 800; font-size: 1.6rem; transition: transform .3s;
+    }
+    .steps li:hover::before { transform: scale(1.12) rotate(-10deg); }
+    .steps li:nth-child(1)::before { background: var(--lime); }
+    .steps li:nth-child(2)::before { background: var(--pink); color: var(--white); }
+    .steps li:nth-child(3)::before { background: var(--sky); }
+    .steps li:nth-child(4)::before { background: var(--orange); }
+    .steps p { color: var(--ink-soft); margin: 0; font-size: .96rem; }
+
+    /* ---------- DUK ---------- */
+    .faq-sec { background: var(--sky); border-block: var(--border); }
+    .faq { max-width: 860px; margin: 52px auto 0; display: grid; gap: 14px; }
+    .faq details { background: var(--white); border: var(--border); border-radius: 18px; box-shadow: 4px 4px 0 var(--ink); transition: background .2s; }
+    .faq details[open] { background: var(--lime); }
+    .faq summary { cursor: pointer; list-style: none; font-weight: 700; font-size: 1.05rem; padding: 20px 64px 20px 24px; position: relative; }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after {
+      content: "+"; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); width: 34px; height: 34px; border-radius: 50%;
+      border: 2px solid var(--ink); background: var(--white); display: grid; place-items: center; font-size: 1.3rem; transition: transform .25s;
+    }
+    .faq details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+    .faq details p { margin: 0; padding: 0 24px 22px; }
+
+    /* ---------- Kontaktai ---------- */
+    .contact-sec { background: var(--pink); }
+    .contact-sec .eyebrow::before { background: var(--lime); }
+    .contact-sec .lead { color: var(--ink); }
+    .contact { display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; align-items: start; }
+    .contact h2 { color: var(--ink); }
+    .contact-info { list-style: none; padding: 0; margin: 30px 0 0; display: grid; gap: 12px; }
+    .contact-info li { background: var(--white); border: var(--border); border-radius: 16px; padding: 14px 18px; box-shadow: 4px 4px 0 var(--ink); }
+    .contact-info span { display: block; font-size: .8rem; font-weight: 600; color: var(--ink-soft); }
+    .contact-info a, .contact-info strong { font-weight: 700; text-decoration: none; font-size: 1.05rem; }
+    .contact-info a:hover { text-decoration: underline; }
+    .promise { margin-top: 18px; padding: 18px; border-radius: 16px; background: var(--lime); border: var(--border); font-size: .95rem; transform: rotate(-1deg); }
+    .contact-form { background: var(--white); border: var(--border); border-radius: var(--radius); padding: 34px; display: grid; gap: 18px; box-shadow: 10px 10px 0 var(--ink); }
+    .field label, .field legend { display: block; font-weight: 700; font-size: .92rem; margin-bottom: 6px; padding: 0; }
+    .field input, .field textarea, .field select {
+      width: 100%; font: inherit; padding: 13px 15px; border: var(--border); border-radius: 12px; background: var(--paper); color: inherit; transition: box-shadow .15s, background .15s;
+    }
+    .field input:focus, .field textarea:focus, .field select:focus { outline: none; background: var(--white); box-shadow: 4px 4px 0 var(--blue); }
+    .field textarea { min-height: 120px; resize: vertical; }
+    fieldset.field { border: 0; margin: 0; padding: 0; min-width: 0; }
+    .options { display: flex; flex-wrap: wrap; gap: 8px; }
+    .options label { margin: 0; font-weight: 600; font-size: .88rem; cursor: pointer; }
+    .options input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+    .options span { display: inline-block; padding: 7px 14px; border: 2px solid var(--ink); border-radius: 999px; background: var(--white); transition: background .15s, transform .15s, box-shadow .15s; }
+    .options label:hover span { transform: translateY(-2px); }
+    .options input:checked + span { background: var(--lime); box-shadow: 3px 3px 0 var(--ink); transform: translate(-1px, -1px); }
+    .options input:focus-visible + span { outline: 3px solid var(--blue); outline-offset: 2px; }
+    .row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+    .consent-line { font-size: .85rem; color: var(--ink-soft); margin: 0; }
+    .form-status { margin: 0; font-weight: 700; min-height: 1.6em; }
+    .form-status.ok { color: #127a3d; }
+    .form-status.err { color: #c4002f; }
+
+    /* ---------- Poraštė ---------- */
+    footer.site-footer { background: var(--ink); color: #c9c9d1; padding: 70px 0 32px; overflow: hidden; }
+    .footer-cta { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; padding-bottom: 40px; border-bottom: 1px solid #2c2c33; }
+    .footer-cta h2 { color: var(--white); margin: 0; font-size: clamp(1.6rem, 3.4vw, 2.6rem); }
+    .footer-cta h2 span { color: var(--lime); }
+    .wordmark { font-family: var(--display); font-weight: 800; font-size: clamp(3.4rem, 15vw, 13rem); line-height: .9; letter-spacing: -.05em; color: transparent; -webkit-text-stroke: 2px #3a3a44; margin: 40px 0 28px; white-space: nowrap; transition: color .4s; user-select: none; }
+    .wordmark:hover { color: var(--lime); -webkit-text-stroke-color: var(--lime); }
+    .footer-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; font-size: .9rem; }
+    .footer-bottom button { background: none; border: 0; color: inherit; font: inherit; text-decoration: underline; cursor: pointer; padding: 0; }
+
+    /* ---------- Slapukų juosta ---------- */
+    .cookie {
+      position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 140; max-width: 520px; margin-left: auto;
+      background: var(--white); border: var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 22px; display: none;
+    }
+    .cookie.show { display: block; }
+    .cookie p { font-size: .92rem; }
+    .cookie-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .cookie .btn { padding: 10px 18px; font-size: .92rem; }
+
+    /* ---------- Animacija ---------- */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s cubic-bezier(.2, .8, .2, 1); }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-d1 { transition-delay: .08s; } .reveal-d2 { transition-delay: .16s; } .reveal-d3 { transition-delay: .24s; }
+    /* Po atsiradimo grąžiname greitus hover efektus */
+    .card.visible, .stat.visible, .work-item.visible { transition: transform .2s ease, box-shadow .2s ease, opacity .7s ease; transition-delay: 0s; }
+    .stat.visible:hover { transform: rotate(-1.5deg) translateY(-4px); }
+    .work-item.visible:hover { transform: translateY(-6px) rotate(-.6deg); }
+    .card.visible:hover { transform: translateY(-4px); }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
+      .bars i { transform: none; }
+      .scribble path { stroke-dashoffset: 0; }
+    }
+
+    /* ---------- Mobilus ---------- */
+    @media (max-width: 1020px) {
+      .nav-links, .nav .btn { display: none; }
+      .menu-toggle { display: grid; }
+      .hero-grid, .about, .contact, .calc { grid-template-columns: 1fr; }
+      .hero-visual { max-width: 520px; width: 100%; margin: 20px auto 0; }
+      .calc-results { border-left: 0; border-top: var(--border); }
+      .grid-3, .work { grid-template-columns: 1fr 1fr; }
+      .stats { grid-template-columns: 1fr 1fr; }
+      .steps { grid-template-columns: 1fr 1fr; row-gap: 40px; }
+      .steps::before { display: none; }
+      .about { gap: 48px; }
+    }
+    @media (max-width: 640px) {
+      .section { padding: 80px 0; }
+      .hero { padding: 120px 0 60px; }
+      .hero-visual { height: 440px; }
+      .ad-google { width: 92%; }
+      .ad-meta { width: 70%; top: 180px; }
+      .toast { width: 90%; left: 0; bottom: 10px; }
+      .badge { width: 96px; height: 96px; top: -40px; }
+      .grid-3, .work, .row-2, .results-grid { grid-template-columns: 1fr; }
+      .stats { gap: 14px; }
+      .stat { padding: 20px 16px; }
+      .steps { grid-template-columns: 1fr; }
+      .calc-inputs, .calc-results, .contact-form { padding: 24px; }
+      .dash-kpis strong { font-size: 1rem; }
+      .btn { padding: 14px 22px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#turinys">Pereiti prie turinio</a>
+  <div class="progress" aria-hidden="true"></div>
+
+  <div class="nav-bar">
+    <div class="wrap">
+      <nav class="nav" aria-label="Pagrindinė navigacija">
+        <a class="logo" href="#pradzia"><span class="logo-mark">N</span>Novaro Digital</a>
+        <ul class="nav-links">
+          <li><a href="#paslaugos">Paslaugos</a></li>
+          <li><a href="#rezultatai">Rezultatai</a></li>
+          <li><a href="#skaiciuokle">Skaičiuoklė</a></li>
+          <li><a href="#procesas">Procesas</a></li>
+          <li><a href="#duk">DUK</a></li>
+        </ul>
+        <a class="btn btn-lime" href="#kontaktai">Nemokamas auditas <span class="arrow">→</span></a>
+        <button class="menu-toggle" aria-label="Atidaryti meniu" aria-expanded="false" aria-controls="drawer">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </nav>
+    </div>
+  </div>
+
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-backdrop" data-menu-close></div>
+    <nav class="drawer-panel" aria-label="Mobilioji navigacija">
+      <button class="drawer-close" aria-label="Uždaryti meniu" data-menu-close>&times;</button>
+      <a href="#paslaugos">Paslaugos</a>
+      <a href="#kodel-mes">Kodėl mes</a>
+      <a href="#rezultatai">Rezultatai</a>
+      <a href="#skaiciuokle">Skaičiuoklė</a>
+      <a href="#procesas">Procesas</a>
+      <a href="#duk">DUK</a>
+      <a href="#kontaktai">Nemokamas auditas →</a>
+    </nav>
+  </div>
+
+  <header class="hero" id="pradzia">
+    <div class="blob blob-1" aria-hidden="true"></div>
+    <div class="blob blob-2" aria-hidden="true"></div>
+    <div class="blob cursor-blob" aria-hidden="true"></div>
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Skaitmeninės rinkodaros agentūra</span>
+        <h1>Paverčiame <span class="rotator-wrap"><span class="rotator" id="rotator">paspaudimus</span></span><br>
+          <span class="scribble visible">klientais
+            <svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 14 C 60 4, 120 4, 170 10 S 260 18, 297 6" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"/></svg>
+          </span>.
+        </h1>
+        <p class="lead">Kuriame svetaines, valdome <b>Google</b> ir <b>Facebook</b> reklamą ir automatizuojame procesus taip, kad kiekvienas reklamai skirtas euras virstų užklausomis ir pardavimais.</p>
+        <div class="hero-actions">
+          <a class="btn btn-dark" href="#kontaktai">Gauti nemokamą auditą <span class="arrow">→</span></a>
+          <a class="btn" href="#skaiciuokle">Paskaičiuoti užklausas</a>
+        </div>
+        <div class="platforms" aria-label="Platformos, su kuriomis dirbame">
+          <span>Dirbame su:</span>
+          <span class="chip">Google Ads</span>
+          <span class="chip">Meta</span>
+          <span class="chip">TikTok</span>
+          <span class="chip">LinkedIn</span>
+          <span class="chip">GA4</span>
+          <span class="chip">WordPress</span>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <a class="badge" href="#kontaktai" tabindex="-1">
+          <span class="badge-circle"></span>
+          <svg class="ring" viewBox="0 0 120 120">
+            <defs><path id="circle" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs>
+            <text font-family="Inter, sans-serif" font-size="11.5" font-weight="700" letter-spacing="2.6" fill="#fff"><textPath href="#circle">NEMOKAMAS AUDITAS • NEMOKAMAS AUDITAS •</textPath></text>
+          </svg>
+          <span class="badge-arrow">↗</span>
+        </a>
+        <div class="float"><div class="mock ad-google">
+          <div class="mock-label"><span class="dot" style="background:#4285f4"></span>Google Ads · Paieška</div>
+          <div class="ad-url">Skelbimas · novarodigital.lt</div>
+          <div class="ad-title">Namų statyba Kaune – kaina per 24 val.</div>
+          <p class="ad-desc">Fiksuota kaina, garantija 10 metų. Užsisakykite nemokamą konsultaciją.</p>
+          <div class="ad-stats"><span>CTR 9,4%</span><span>Užklausa – 14 €</span></div>
+        </div></div>
+        <div class="float float-2"><div class="mock ad-meta">
+          <div class="mock-label"><span class="dot" style="background:#fff"></span>Meta Ads · ROAS</div>
+          <strong>5,1×</strong>
+          <div class="mini-bars"><i data-h="30"></i><i data-h="45"></i><i data-h="38"></i><i data-h="60"></i><i data-h="72"></i><i data-h="100"></i></div>
+        </div></div>
+        <div class="float float-3"><div class="mock toast">
+          <div class="toast-icon">🔔</div>
+          <div class="toast-text" id="toast-text"><b>Nauja užklausa!</b><span>Tomas · statybos įmonė · ką tik</span></div>
+        </div></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="marquees" aria-hidden="true">
+    <div class="marquee marquee-1"><div class="marquee-track">
+      <span>Svetainės</span><span>✦</span><span>Google Ads</span><span>✦</span><span>Facebook reklama</span><span>✦</span><span>Instagram</span><span>✦</span><span>Automatizacijos</span><span>✦</span><span>SEO</span><span>✦</span>
+      <span>Svetainės</span><span>✦</span><span>Google Ads</span><span>✦</span><span>Facebook reklama</span><span>✦</span><span>Instagram</span><span>✦</span><span>Automatizacijos</span><span>✦</span><span>SEO</span><span>✦</span>
+    </div></div>
+    <div class="marquee marquee-2"><div class="marquee-track">
+      <span>Daugiau užklausų</span><span>●</span><span>Mažesnė kaina už klientą</span><span>●</span><span>Aiškios ataskaitos</span><span>●</span><span>Jokių ilgų sutarčių</span><span>●</span>
+      <span>Daugiau užklausų</span><span>●</span><span>Mažesnė kaina už klientą</span><span>●</span><span>Aiškios ataskaitos</span><span>●</span><span>Jokių ilgų sutarčių</span><span>●</span>
+    </div></div>
+  </div>
+
+  <main id="turinys">
+    <!-- PAVYZDINIAI DUOMENYS: prieš skelbiant pakeiskite tikrais skaičiais -->
+    <section class="wrap" aria-label="Mūsų skaičiai">
+      <div class="stats">
+        <div class="stat reveal"><strong data-count="85" data-suffix="+">85+</strong><span>klientų nuo 2018 m.</span></div>
+        <div class="stat reveal reveal-d1"><strong data-count="2.3" data-decimals="1" data-prefix="€" data-suffix=" mln.">€2,3 mln.</strong><span>valdyto reklamos biudžeto</span></div>
+        <div class="stat reveal reveal-d2"><strong data-count="4.8" data-decimals="1" data-suffix="×">4,8×</strong><span>vidutinė reklamos grąža</span></div>
+        <div class="stat reveal reveal-d3"><strong data-count="24" data-suffix=" val.">24 val.</strong><span>atsakymas į užklausą</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="paslaugos">
+      <div class="wrap">
+        <div class="reveal center">
+          <span class="eyebrow">Paslaugos</span>
+          <h2>Viskas augimui internete. <span class="mark">Vienoje vietoje.</span></h2>
+          <p class="lead">Nuo svetainės iki reklamos ir automatizacijų – viena komanda ir viena atsakomybė už rezultatą.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card reveal" data-tilt>
+            <span class="card-num">01</span>
+            <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3M3 9h18"/></svg></div>
+            <h3>Svetainių kūrimas</h3>
+            <p>Greitos, mobiliems pritaikytos svetainės, kurios ne tik gražiai atrodo, bet ir paverčia lankytojus klientais.</p>
+            <ul><li>Įmonių svetainės</li><li>Landing puslapiai</li><li>E. parduotuvės</li></ul>
+          </article>
+          <article class="card reveal reveal-d1" data-tilt>
+            <span class="card-num">02</span>
+            <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+            <h3>Google Ads reklama</h3>
+            <p>Pasirodykite tada, kai klientas jau ieško jūsų paslaugos. Rūpinamės, kad kiekvienas paspaudimas būtų vertingas.</p>
+            <ul><li>Paieška</li><li>Performance Max</li><li>Shopping</li><li>YouTube</li></ul>
+          </article>
+          <article class="card reveal reveal-d2" data-tilt>
+            <span class="card-num">03</span>
+            <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-8-8 18-2-8-8-2z"/></svg></div>
+            <h3>Facebook ir Instagram</h3>
+            <p>Pasiekite tikslinę auditoriją su kūrybiniais sprendimais, kurie sustabdo slinkimą ir priverčia spausti.</p>
+            <ul><li>Meta Ads</li><li>Retargetingas</li><li>TikTok</li><li>LinkedIn</li></ul>
+          </article>
+          <article class="card reveal" data-tilt>
+            <span class="card-num">04</span>
+            <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 6-6"/></svg></div>
+            <h3>Užklausų generavimas</h3>
+            <p>Reklama, nukreipimo puslapiai ir formos – viena sistema, kuri kasdien atneša potencialių klientų kontaktus.</p>
+            <ul><li>Lead formos</li><li>Piltuvėliai</li><li>A/B testai</li></ul>
+          </article>
+          <article class="card reveal reveal-d1" data-tilt>
+            <span class="card-num">05</span>
+            <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+            <h3>Automatizacijos</h3>
+            <p>Užklausos keliauja į CRM, klientas gauna atsakymą per minutę, o pasikartojantys darbai atliekami be jūsų.</p>
+            <ul><li>CRM</li><li>El. laiškų sekos</li><li>Make / Zapier</li><li>AI</li></ul>
+          </article>
+          <article class="card reveal reveal-d2" data-tilt>
+            <span class="card-num">06</span>
+            <div class="card-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10M18 20V4M6 20v-4"/></svg></div>
+            <h3>SEO ir analitika</h3>
+            <p>Matote, iš kur ateina kiekvienas klientas, ir augate Google paieškoje be nuolatinio mokėjimo už paspaudimus.</p>
+            <ul><li>SEO</li><li>GA4</li><li>Konversijų sekimas</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="kodel-mes">
+      <div class="wrap about">
+        <div class="dash reveal" aria-hidden="true">
+          <div class="dash-head"><span>Kampanijos ataskaita · 90 d.</span><b>▲ auga</b></div>
+          <div class="dash-kpis">
+            <div><span>Užklausos</span><strong>+184%</strong></div>
+            <div><span>Kaina / užklausa</span><strong>−42%</strong></div>
+            <div><span>ROAS</span><strong>4,6×</strong></div>
+          </div>
+          <div class="bars">
+            <i style="height:22%;transition-delay:.05s"></i><i style="height:30%;transition-delay:.1s"></i><i style="height:28%;transition-delay:.15s"></i><i style="height:41%;transition-delay:.2s"></i>
+            <i style="height:48%;transition-delay:.25s"></i><i style="height:55%;transition-delay:.3s"></i><i style="height:52%;transition-delay:.35s"></i><i style="height:68%;transition-delay:.4s"></i>
+            <i style="height:74%;transition-delay:.45s"></i><i style="height:82%;transition-delay:.5s"></i><i style="height:90%;transition-delay:.55s"></i><i style="height:100%;transition-delay:.6s"></i>
+          </div>
+          <p class="dash-note">Iliustracija</p>
+        </div>
+        <div class="reveal">
+          <span class="eyebrow">Kodėl mes</span>
+          <h2>Matuojame ne paspaudimus, o <span class="mark" style="color:var(--ink)">pardavimus</span></h2>
+          <p class="lead">Daug agentūrų rodo gražias ataskaitas. Mes rodome, kiek užklausų ir pajamų atnešė jūsų investicija.</p>
+          <ul class="checks">
+            <li>Viena komanda svetainei, reklamai ir automatizacijoms</li>
+            <li>Skaidrios ataskaitos kas mėnesį: išleista, gauta, kaina už užklausą</li>
+            <li>Jokių ilgalaikių sutarčių – dirbame, kol matote rezultatą</li>
+            <li>Reklamos paskyros priklauso jums, ne mums</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="rezultatai">
+      <div class="wrap">
+        <div class="reveal center">
+          <span class="eyebrow">Rezultatai</span>
+          <h2>Skaičiai, kuriais <span class="mark mark-pink">didžiuojamės</span></h2>
+          <p class="lead">Svetainė, reklama ir automatizacijos kartu keičia verslo skaičius.</p>
+        </div>
+        <!-- PAVYZDINIAI DUOMENYS: prieš skelbiant pakeiskite tikrais klientų atvejais -->
+        <div class="work">
+          <article class="work-item reveal">
+            <div class="work-top"><div class="work-metric" data-count="240" data-prefix="+" data-suffix="%">+240%</div><div class="work-metric-label">daugiau užklausų per 3 mėn.</div></div>
+            <div class="work-body">
+              <p><strong>Namų statybos įmonė, Kaunas.</strong> Nauja svetainė su kainų skaičiuokle ir Google Ads paieškos kampanijos. Kaina už užklausą nukrito nuo 38 € iki 14 €.</p>
+              <div class="tags"><span class="tag">Svetainė</span><span class="tag">Google Ads</span></div>
+            </div>
+          </article>
+          <article class="work-item reveal reveal-d1">
+            <div class="work-top"><div class="work-metric" data-count="5.1" data-decimals="1" data-suffix="×">5,1×</div><div class="work-metric-label">reklamos grąža (ROAS)</div></div>
+            <div class="work-body">
+              <p><strong>Natūralios kosmetikos e. parduotuvė.</strong> Meta reklama su dinaminiu katalogu, retargetingas ir Google Shopping. Pardavimai per pusmetį – 2,7 karto daugiau.</p>
+              <div class="tags"><span class="tag">Meta Ads</span><span class="tag">Google Shopping</span></div>
+            </div>
+          </article>
+          <article class="work-item reveal reveal-d2">
+            <div class="work-top"><div class="work-metric" data-count="15" data-suffix=" val.">15 val.</div><div class="work-metric-label">sutaupyta kas savaitę</div></div>
+            <div class="work-body">
+              <p><strong>Odontologijos klinika, Vilnius.</strong> Užklausos iš svetainės ir Facebook automatiškai patenka į CRM, pacientas per minutę gauna SMS su registracijos nuoroda.</p>
+              <div class="tags"><span class="tag">Automatizacijos</span><span class="tag">CRM</span><span class="tag">Facebook lead</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section calc-sec" id="skaiciuokle">
+      <div class="wrap">
+        <div class="reveal">
+          <span class="eyebrow">Skaičiuoklė</span>
+          <h2>Kiek klientų gali atnešti reklama?</h2>
+          <p class="lead">Pajudinkite slankiklius ir pamatykite apytikslį rezultatą per mėnesį.</p>
+        </div>
+        <div class="calc reveal">
+          <div class="calc-inputs">
+            <div class="calc-field">
+              <label for="c-budget">Reklamos biudžetas per mėn. <output id="o-budget">1 000 €</output></label>
+              <input type="range" id="c-budget" min="300" max="10000" step="100" value="1000">
+            </div>
+            <div class="calc-field">
+              <label for="c-niche">Jūsų sritis</label>
+              <!-- PAVYZDINIAI DUOMENYS: vidutinė kaina už užklausą (€) -->
+              <select id="c-niche">
+                <option value="18">Paslaugos (grožis, sveikata, remontas)</option>
+                <option value="25" selected>Statyba ir nekilnojamas turtas</option>
+                <option value="12">E. parduotuvė (pirkimas)</option>
+                <option value="45">B2B paslaugos</option>
+                <option value="30">Mokymai ir kursai</option>
+              </select>
+            </div>
+            <div class="calc-field">
+              <label for="c-rate">Kiek užklausų tampa klientais <output id="o-rate">20%</output></label>
+              <input type="range" id="c-rate" min="5" max="60" step="1" value="20">
+            </div>
+            <div class="calc-field">
+              <label for="c-deal">Vidutinė vieno kliento vertė, €</label>
+              <input type="number" id="c-deal" min="10" max="1000000" step="10" value="800">
+            </div>
+          </div>
+          <div class="calc-results" aria-live="polite">
+            <h3>Apytikslis rezultatas per mėnesį</h3>
+            <div class="results-grid">
+              <div class="res"><span>Užklausos</span><strong id="r-leads">40</strong></div>
+              <div class="res"><span>Nauji klientai</span><strong id="r-clients">8</strong></div>
+              <div class="res res-big"><span>Galimos pajamos</span><strong id="r-revenue">6 400 €</strong></div>
+              <div class="res"><span>Grąža iš 1 €</span><strong id="r-roas">6,4 €</strong></div>
+              <div class="res"><span>Kaina už užklausą</span><strong id="r-cpl">25 €</strong></div>
+            </div>
+            <p class="calc-note">Skaičiavimas remiasi vidutiniais rinkos rodikliais ir yra tik orientacinis. Tikslią prognozę jūsų verslui pateiksime po nemokamo audito.</p>
+            <a class="btn btn-dark" href="#kontaktai" id="calc-cta">Noriu tikslaus skaičiavimo <span class="arrow">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="procesas">
+      <div class="wrap">
+        <div class="reveal center">
+          <span class="eyebrow">Kaip dirbame</span>
+          <h2>Nuo audito iki <span class="mark">augimo</span></h2>
+          <p class="lead">Aiškus procesas – visada žinote, kas daroma ir kodėl.</p>
+        </div>
+        <ol class="steps">
+          <li class="reveal"><h3>Nemokamas auditas</h3><p>Peržiūrime svetainę, reklamą ir konkurentus – parodome, kur prarandate klientus.</p></li>
+          <li class="reveal reveal-d1"><h3>Strategija</h3><p>Pasiūlome kanalus, biudžetą ir tikslus: kiek užklausų ir už kokią kainą.</p></li>
+          <li class="reveal reveal-d2"><h3>Paleidimas</h3><p>Sukuriame ar atnaujiname svetainę, nustatome sekimą ir paleidžiame kampanijas.</p></li>
+          <li class="reveal reveal-d3"><h3>Optimizavimas</h3><p>Kas savaitę geriname rezultatus, kas mėnesį – aiški ataskaita.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section faq-sec" id="duk">
+      <div class="wrap">
+        <div class="reveal center">
+          <span class="eyebrow">DUK</span>
+          <h2>Dažniausi klausimai</h2>
+        </div>
+        <div class="faq reveal">
+          <details>
+            <summary>Kiek kainuoja jūsų paslaugos?</summary>
+            <p>Reklamos valdymas – nuo 390 € per mėnesį vienam kanalui (Google arba Meta). Nukreipimo puslapis – nuo 690 €, įmonės svetainė – nuo 1 490 €, automatizacijos – nuo 450 €. Tikslią kainą pateikiame po nemokamo audito, be paslėptų mokesčių.</p>
+          </details>
+          <details>
+            <summary>Koks minimalus reklamos biudžetas?</summary>
+            <p>Rekomenduojame pradėti nuo 500 € per mėnesį vienam kanalui. Tai leidžia per pirmąjį mėnesį surinkti pakankamai duomenų optimizavimui. Šis biudžetas mokamas tiesiai Google ar Meta, ne mums.</p>
+          </details>
+          <details>
+            <summary>Per kiek laiko pamatysiu rezultatus?</summary>
+            <p>Pirmosios užklausos iš reklamos dažniausiai ateina per 1–2 savaites, o stabilūs rezultatai – per 2–3 mėnesius optimizavimo. SEO rezultatai paprastai matomi per 3–6 mėnesius.</p>
+          </details>
+          <details>
+            <summary>Ar reikia ilgalaikės sutarties?</summary>
+            <p>Ne. Dirbame mėnesiais – jei nesate patenkinti, galite nutraukti bet kada. Visos reklamos paskyros ir duomenys lieka jums.</p>
+          </details>
+          <details>
+            <summary>Ar galite dirbti su mano esama svetaine?</summary>
+            <p>Taip. Pirmiausia ją įvertiname – dažnai užtenka patobulinti kelis puslapius ir formas, kad reklama pradėtų veikti efektyviau.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-sec" id="kontaktai">
+      <div class="wrap contact">
+        <div class="reveal">
+          <span class="eyebrow">Nemokamas auditas</span>
+          <h2>Sužinokite, kiek klientų prarandate</h2>
+          <p class="lead">Papasakokite apie savo verslą – per 2 darbo dienas atsiųsime auditą su konkrečiais pasiūlymais.</p>
+          <ul class="contact-info">
+            <li><span>El. paštas</span><a href="mailto:info@novarodigital.lt">info@novarodigital.lt</a></li>
+            <li><span>Telefonas</span><a href="tel:+37061234567">+370 612 34567</a></li>
+            <li><span>Biuras</span><strong>Vilnius · dirbame visoje Lietuvoje</strong></li>
+            <li><span>Darbo laikas</span><strong>I–V 9:00–18:00</strong></li>
+          </ul>
+          <div class="promise"><strong>Be įsipareigojimų.</strong> Auditas nemokamas, net jei nuspręsite dirbti patys.</div>
+        </div>
+
+        <form class="contact-form reveal" id="contact-form" action="contact.php" method="post" novalidate>
+          <div class="row-2">
+            <div class="field"><label for="f-name">Vardas *</label><input id="f-name" name="name" autocomplete="name" required maxlength="100"></div>
+            <div class="field"><label for="f-email">El. paštas *</label><input id="f-email" name="email" type="email" autocomplete="email" required maxlength="150"></div>
+          </div>
+          <div class="row-2">
+            <div class="field"><label for="f-phone">Telefonas</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" maxlength="40"></div>
+            <div class="field"><label for="f-company">Įmonė / svetainė</label><input id="f-company" name="company" autocomplete="organization" maxlength="150"></div>
+          </div>
+          <fieldset class="field">
+            <legend>Kas jus domina?</legend>
+            <div class="options">
+              <label><input type="checkbox" name="services[]" value="Svetainė"><span>Svetainė</span></label>
+              <label><input type="checkbox" name="services[]" value="Google Ads"><span>Google Ads</span></label>
+              <label><input type="checkbox" name="services[]" value="Facebook / Instagram"><span>Facebook / Instagram</span></label>
+              <label><input type="checkbox" name="services[]" value="Užklausų generavimas"><span>Užklausų generavimas</span></label>
+              <label><input type="checkbox" name="services[]" value="Automatizacijos"><span>Automatizacijos</span></label>
+              <label><input type="checkbox" name="services[]" value="SEO"><span>SEO</span></label>
+            </div>
+          </fieldset>
+          <div class="field">
+            <label for="f-budget">Mėnesio reklamos biudžetas</label>
+            <select id="f-budget" name="budget">
+              <option value="">Pasirinkite</option>
+              <option>Iki 500 €</option>
+              <option>500–1 500 €</option>
+              <option>1 500–5 000 €</option>
+              <option>Daugiau nei 5 000 €</option>
+              <option>Dar nežinau</option>
+            </select>
+          </div>
+          <div class="field"><label for="f-message">Trumpai apie jūsų verslą ir tikslus *</label><textarea id="f-message" name="message" required maxlength="5000"></textarea></div>
+
+          <!-- Apsauga nuo botų: žmonės šio lauko nemato, botai jį užpildo -->
+          <div class="hp" aria-hidden="true"><label for="f-website">Svetainė</label><input id="f-website" name="website" tabindex="-1" autocomplete="off"></div>
+          <input type="hidden" name="form_started" value="">
+
+          <p class="consent-line">Siųsdami sutinkate, kad jūsų duomenis naudosime tik atsakyti į šią užklausą.</p>
+          <div><button class="btn btn-dark" type="submit">Gauti nemokamą auditą <span class="arrow">→</span></button></div>
+          <p class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-cta">
+        <h2>Pasiruošę <span>augti?</span></h2>
+        <a class="btn btn-lime" href="#kontaktai">Pradėkime pokalbį <span class="arrow">→</span></a>
+      </div>
+      <div class="wordmark" aria-hidden="true">NOVARO</div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> Novaro Digital · Svetainės · Google Ads · Meta reklama · Automatizacijos</span>
+        <button type="button" id="cookie-settings" hidden>Slapukų nustatymai</button>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cookie" id="cookie" role="dialog" aria-live="polite" aria-label="Slapukų sutikimas">
+    <p><strong>Slapukai 🍪</strong> Naudojame analitinius slapukus, kad suprastume, kaip lankytojai naudojasi svetaine. Juos įjungsime tik jums sutikus.</p>
+    <div class="cookie-actions">
+      <button class="btn btn-lime" type="button" data-consent="granted">Sutinku</button>
+      <button class="btn" type="button" data-consent="denied">Atsisakyti</button>
+    </div>
+  </div>
+
+  <script>
+    // ========== KEISTI: įrašykite savo Google Analytics ID (pvz. 'G-ABC123XYZ'), arba palikite tuščią ==========
+    const GA_ID = '';
+
+    const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const finePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    // Lipnus meniu ir progreso juosta
+    const navBar = document.querySelector('.nav-bar');
+    const progress = document.querySelector('.progress');
+    const onScroll = () => {
+      navBar.classList.toggle('is-sticky', scrollY > 40);
+      const max = document.documentElement.scrollHeight - innerHeight;
+      progress.style.transform = 'scaleX(' + (max > 0 ? scrollY / max : 0) + ')';
+    };
+    addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Mobilusis meniu
+    const drawer = document.getElementById('drawer');
+    const toggle = document.querySelector('.menu-toggle');
+    const setMenu = open => {
+      drawer.classList.toggle('open', open);
+      drawer.setAttribute('aria-hidden', String(!open));
+      toggle.setAttribute('aria-expanded', String(open));
+      document.body.style.overflow = open ? 'hidden' : '';
+      if (open) drawer.querySelector('a').focus();
+    };
+    toggle.addEventListener('click', () => setMenu(true));
+    drawer.querySelectorAll('a,[data-menu-close]').forEach(el => el.addEventListener('click', () => setMenu(false)));
+    addEventListener('keydown', e => { if (e.key === 'Escape' && drawer.classList.contains('open')) { setMenu(false); toggle.focus(); } });
+
+    // Besikeičiantis žodis antraštėje
+    const rotator = document.getElementById('rotator');
+    const words = ['paspaudimus', 'lankytojus', 'sekėjus', 'reklamą'];
+    let wordIndex = 0;
+    setInterval(() => {
+      rotator.classList.add('out');
+      setTimeout(() => {
+        wordIndex = (wordIndex + 1) % words.length;
+        rotator.textContent = words[wordIndex];
+        rotator.classList.remove('out');
+      }, 300);
+    }, 2400);
+
+    // Besikeičiantys „naujos užklausos“ pranešimai (pavyzdiniai)
+    const toastText = document.getElementById('toast-text');
+    const toasts = [
+      ['Nauja užklausa!', 'Tomas · statybos įmonė · ką tik'],
+      ['Nauja užklausa!', 'Rūta · grožio salonas · prieš 1 min.'],
+      ['Naujas pardavimas!', 'E. parduotuvė · 86 € · prieš 2 min.'],
+      ['Nauja registracija!', 'Odontologijos klinika · prieš 3 min.']
+    ];
+    let toastIndex = 0;
+    setInterval(() => {
+      toastText.classList.add('out');
+      setTimeout(() => {
+        toastIndex = (toastIndex + 1) % toasts.length;
+        toastText.innerHTML = '<b>' + toasts[toastIndex][0] + '</b><span>' + toasts[toastIndex][1] + '</span>';
+        toastText.classList.remove('out');
+      }, 300);
+    }, 3200);
+
+    // Meta kortelės stulpeliai
+    requestAnimationFrame(() => setTimeout(() => {
+      document.querySelectorAll('.mini-bars i').forEach(b => { b.style.height = b.dataset.h + '%'; });
+    }, 300));
+
+    // Spalvota dėmė seka pelę
+    const hero = document.querySelector('.hero');
+    const cursorBlob = document.querySelector('.cursor-blob');
+    if (finePointer && !reduceMotion) {
+      hero.addEventListener('pointermove', e => {
+        const r = hero.getBoundingClientRect();
+        cursorBlob.style.transform = 'translate(' + (e.clientX - r.left - 180) + 'px,' + (e.clientY - r.top - 180) + 'px)';
+      });
+    }
+
+    // Kortelių 3D pakrypimas
+    if (finePointer && !reduceMotion) {
+      document.querySelectorAll('[data-tilt]').forEach(card => {
+        card.addEventListener('pointermove', e => {
+          const r = card.getBoundingClientRect();
+          const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+          card.style.transform = 'perspective(800px) rotateX(' + (-y * 8) + 'deg) rotateY(' + (x * 8) + 'deg) translateY(-4px)';
+        });
+        card.addEventListener('pointerleave', () => { card.style.transform = ''; });
+      });
+    }
+
+    // Skaičių animacija
+    const formatNum = (value, decimals) => value.toFixed(decimals).replace('.', ',');
+    const runCounter = el => {
+      const target = parseFloat(el.dataset.count), decimals = +(el.dataset.decimals || 0);
+      const prefix = el.dataset.prefix || '', suffix = el.dataset.suffix || '';
+      if (reduceMotion) { el.textContent = prefix + formatNum(target, decimals) + suffix; return; }
+      const start = performance.now(), duration = 1400;
+      const tick = now => {
+        const t = Math.min(1, (now - start) / duration), eased = 1 - Math.pow(1 - t, 3);
+        el.textContent = prefix + formatNum(target * eased, decimals) + suffix;
+        if (t < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+
+    // Atsiradimas slenkant
+    const reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(entries => entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('visible');
+        e.target.querySelectorAll('[data-count]').forEach(runCounter);
+        io.unobserve(e.target);
+      }), { threshold: 0.15 });
+      reveals.forEach(el => io.observe(el));
+    } else {
+      reveals.forEach(el => el.classList.add('visible'));
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Skaičiuoklė
+    const money = n => Math.round(n).toLocaleString('lt-LT') + ' €';
+    const calc = {
+      budget: document.getElementById('c-budget'), niche: document.getElementById('c-niche'),
+      rate: document.getElementById('c-rate'), deal: document.getElementById('c-deal')
+    };
+    const updateCalc = () => {
+      const budget = +calc.budget.value, cpl = +calc.niche.value, rate = +calc.rate.value, deal = Math.max(0, +calc.deal.value || 0);
+      const leads = Math.floor(budget / cpl), clients = Math.round(leads * rate / 100), revenue = clients * deal;
+      document.getElementById('o-budget').textContent = money(budget);
+      document.getElementById('o-rate').textContent = rate + '%';
+      document.getElementById('r-leads').textContent = leads;
+      document.getElementById('r-clients').textContent = clients;
+      document.getElementById('r-revenue').textContent = money(revenue);
+      document.getElementById('r-roas').textContent = (revenue / budget).toFixed(1).replace('.', ',') + ' €';
+      document.getElementById('r-cpl').textContent = money(cpl);
+    };
+    Object.values(calc).forEach(el => el.addEventListener('input', updateCalc));
+    updateCalc();
+
+    // Skaičiuoklės duomenys perkeliami į formą
+    document.getElementById('calc-cta').addEventListener('click', () => {
+      const budget = +calc.budget.value;
+      const budgetSelect = document.getElementById('f-budget');
+      budgetSelect.selectedIndex = budget < 500 ? 1 : budget <= 1500 ? 2 : budget <= 5000 ? 3 : 4;
+      const message = document.getElementById('f-message');
+      if (!message.value.trim()) {
+        message.value = 'Skaičiuoklė: biudžetas ' + money(budget) + '/mėn., sritis – ' + calc.niche.selectedOptions[0].text +
+          ', vidutinė kliento vertė ' + money(+calc.deal.value || 0) + '.\n\nApie mūsų verslą: ';
+      }
+      setTimeout(() => document.getElementById('f-name').focus({ preventScroll: true }), 600);
+    });
+
+    // Kontaktų forma
+    const form = document.getElementById('contact-form');
+    const status = form.querySelector('.form-status');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const fields = form.elements;
+    fields['form_started'].value = Math.floor(Date.now() / 1000);
+
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      status.className = 'form-status';
+      const name = fields['name'].value.trim(), email = fields['email'].value.trim(), message = fields['message'].value.trim();
+      if (!name || !message || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        status.textContent = 'Užpildykite vardą, teisingą el. paštą ir žinutę.';
+        status.classList.add('err');
+        return;
+      }
+      submitBtn.disabled = true;
+      status.textContent = 'Siunčiama…';
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' }
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || !data.ok) throw new Error(data.message || 'Nepavyko išsiųsti.');
+        status.textContent = data.message || 'Ačiū! Netrukus susisieksime.';
+        status.classList.add('ok');
+        form.reset();
+        fields['form_started'].value = Math.floor(Date.now() / 1000);
+        if (window.gtag) gtag('event', 'generate_lead');
+      } catch (err) {
+        status.textContent = err.message || 'Nepavyko išsiųsti. Parašykite mums el. paštu.';
+        status.classList.add('err');
+      } finally {
+        submitBtn.disabled = false;
+      }
+    });
+
+    // Slapukų sutikimas + Google Analytics (įkeliama tik jei nurodytas GA_ID ir lankytojas sutiko)
+    if (GA_ID) {
+      const KEY = 'site_analytics_consent';
+      const banner = document.getElementById('cookie');
+      const settingsBtn = document.getElementById('cookie-settings');
+      const read = () => { try { return localStorage.getItem(KEY); } catch { return null; } };
+      const save = v => { try { localStorage.setItem(KEY, v); } catch {} };
+      let loaded = false;
+
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { dataLayer.push(arguments); };
+      gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+
+      const apply = value => {
+        gtag('consent', 'update', { analytics_storage: value });
+        if (value === 'granted' && !loaded) {
+          loaded = true;
+          const s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+          document.head.appendChild(s);
+          gtag('js', new Date());
+          gtag('config', GA_ID, { anonymize_ip: true });
+        }
+      };
+
+      settingsBtn.hidden = false;
+      settingsBtn.addEventListener('click', () => banner.classList.add('show'));
+      banner.querySelectorAll('[data-consent]').forEach(btn => btn.addEventListener('click', () => {
+        save(btn.dataset.consent);
+        apply(btn.dataset.consent);
+        banner.classList.remove('show');
+      }));
+
+      const saved = read();
+      if (saved) apply(saved); else banner.classList.add('show');
+    }
+  </script>
+</body>
+</html>
