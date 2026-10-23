@@ -6,6 +6,10 @@ DirectoryIndex index.html
 # Visada naudoti HTTPS ir adresą be www
 <IfModule mod_rewrite.c>
   RewriteEngine On
+
+  # Git istorija (.git aplankas, .gitignore) niekada neturi būti pasiekiama iš interneto
+  RewriteRule (^|/)\.git - [F,L]
+
   RewriteCond %{HTTPS} off [OR]
   RewriteCond %{HTTP_HOST} ^www\. [NC]
   RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
@@ -40,3 +44,8 @@ AddType application/manifest+json .webmanifest
 <FilesMatch "^(README\.md|\.git.*)$">
   Require all denied
 </FilesMatch>
+
+# Atsarginė apsauga, jei mod_rewrite neveikia
+<IfModule !mod_rewrite.c>
+  RedirectMatch 404 (^|/)\.git
+</IfModule>
