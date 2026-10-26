@@ -15,7 +15,8 @@
 1. **`index.html`** – ieškokite „Novaro Digital“, „novarodigital.lt“, „+370 612 34567“ / „+37061234567“, logotipo raidės „N“; skyrelis `<head>` pažymėtas `KEISTI`.
 2. **Skaičiai ir rezultatai** – pradžios statistika (85+, €2,3 mln., 4,8×, 24 val.) ir „Rezultatai“ kortelės pažymėtos `PAVYZDINIAI DUOMENYS`. Įrašykite tik tikrus savo duomenis.
 3. **DUK** – kainos (nuo 390 €, 690 €, 1 490 €, 450 €) ir minimalus biudžetas – pavyzdžiai; tie patys klausimai yra ir `<head>` JSON-LD bloke.
-4. **Spalvos** – `index.html` viršuje, `:root { --accent: … }`.
+4. **Spalvos** – `index.html` viršuje, `:root { --lime: …; --pink: …; --blue: … }`.
+5. **Paslėpta nuo Google** – kol duomenys pavyzdiniai, svetainė pažymėta `noindex`. Paleidžiant: `index.html` pakeiskite `<meta name="robots">` į `index,follow` ir ištrinkite `X-Robots-Tag` eilutę iš `.htaccess`.
 4. **`contact.php`** – viršuje įrašykite `$TO_EMAIL` ir `$FROM_EMAIL` (jūsų domeno adresas).
 5. **Google Analytics (nebūtina)** – `index.html` apačioje `const GA_ID = 'G-...'`. Kol tuščia, analitika ir slapukų juosta neįjungiamos.
 6. **`og-image.png`** – 1200×630 px paveikslėlis, rodomas dalinantis nuoroda socialiniuose tinkluose.

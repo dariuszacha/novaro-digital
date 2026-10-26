@@ -17,6 +17,9 @@ DirectoryIndex index.html
 </IfModule>
 
 <IfModule mod_headers.c>
+  # LAIKINAI: kol svetainėje pavyzdiniai duomenys, paieškos sistemos jos nerodo. Paleidžiant šią eilutę ištrinkite.
+  Header always set X-Robots-Tag "noindex, nofollow"
+
   Header always set Strict-Transport-Security "max-age=31536000"
   Header always set X-Content-Type-Options "nosniff"
   Header always set X-Frame-Options "SAMEORIGIN"
