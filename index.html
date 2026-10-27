@@ -317,7 +317,14 @@
     .res-big { grid-column: 1 / -1; background: var(--ink); color: var(--white); }
     .res-big span { color: #c9c9d1; }
     .res-big strong { color: var(--lime); font-size: clamp(2rem, 4vw, 3rem); }
-    .calc-note { font-size: .8rem; color: var(--ink-soft); margin: 0 0 20px; }
+    .calc-note { font-size: .8rem; color: var(--ink-soft); margin: 0 0 12px; }
+    .res small { display: block; font-size: .75rem; font-weight: 600; color: var(--ink-soft); margin-top: 2px; }
+    .calc-field.is-disabled { display: none; }
+    .calc-sources { font-size: .8rem; margin: 0 0 20px; background: var(--white); border: 2px solid var(--ink); border-radius: 14px; }
+    .calc-sources summary { cursor: pointer; font-weight: 700; padding: 10px 14px; }
+    .calc-sources p, .calc-sources ul { margin: 0; padding: 0 14px 10px; color: var(--ink-soft); }
+    .calc-sources ul { padding-left: 30px; }
+    .calc-sources a { color: var(--blue); font-weight: 600; }
     .calc-results .btn { margin-top: auto; align-self: flex-start; }
 
     /* ---------- Procesas ---------- */
@@ -700,34 +707,49 @@
             </div>
             <div class="calc-field">
               <label for="c-niche">Jūsų sritis</label>
-              <!-- PAVYZDINIAI DUOMENYS: vidutinė kaina už užklausą (€) -->
+              <!-- Kaina už užklausą (value) ir įprastas intervalas (data-min/max) = Lietuvos CPC ÷ konversijos rodiklis, žr. „Šaltiniai ir prielaidos“.
+                   data-rate ir data-deal – pradinės prielaidos, kurias lankytojas gali keisti. -->
               <select id="c-niche">
-                <option value="18">Paslaugos (grožis, sveikata, remontas)</option>
-                <option value="25" selected>Statyba ir nekilnojamas turtas</option>
-                <option value="12">E. parduotuvė (pirkimas)</option>
-                <option value="45">B2B paslaugos</option>
-                <option value="30">Mokymai ir kursai</option>
+                <option value="12" data-min="6" data-max="20" data-rate="25" data-deal="80">Grožis ir buitinės paslaugos</option>
+                <option value="35" data-min="20" data-max="60" data-rate="30" data-deal="300">Sveikata ir odontologija</option>
+                <option value="35" data-min="20" data-max="60" data-rate="10" data-deal="4000" selected>Statyba, remontas ir NT</option>
+                <option value="45" data-min="25" data-max="80" data-rate="10" data-deal="2500">B2B paslaugos</option>
+                <option value="15" data-min="8" data-max="30" data-rate="15" data-deal="250">Mokymai ir kursai</option>
+                <option value="30" data-min="15" data-max="50" data-rate="100" data-deal="45" data-mode="ecom">E. parduotuvė</option>
               </select>
             </div>
-            <div class="calc-field">
-              <label for="c-rate">Kiek užklausų tampa klientais <output id="o-rate">20%</output></label>
-              <input type="range" id="c-rate" min="5" max="60" step="1" value="20">
+            <div class="calc-field" id="rate-field">
+              <label for="c-rate">Kiek užklausų tampa klientais <output id="o-rate">10%</output></label>
+              <input type="range" id="c-rate" min="5" max="60" step="1" value="10">
             </div>
             <div class="calc-field">
-              <label for="c-deal">Vidutinė vieno kliento vertė, €</label>
-              <input type="number" id="c-deal" min="10" max="1000000" step="10" value="800">
+              <label for="c-deal" id="l-deal">Vidutinė vieno kliento vertė, €</label>
+              <input type="number" id="c-deal" min="10" max="1000000" step="10" value="4000">
             </div>
           </div>
           <div class="calc-results" aria-live="polite">
             <h3>Apytikslis rezultatas per mėnesį</h3>
             <div class="results-grid">
-              <div class="res"><span>Užklausos</span><strong id="r-leads">40</strong></div>
-              <div class="res"><span>Nauji klientai</span><strong id="r-clients">8</strong></div>
-              <div class="res res-big"><span>Galimos pajamos</span><strong id="r-revenue">6 400 €</strong></div>
-              <div class="res"><span>Grąža iš 1 €</span><strong id="r-roas">6,4 €</strong></div>
-              <div class="res"><span>Kaina už užklausą</span><strong id="r-cpl">25 €</strong></div>
+              <div class="res"><span id="l-leads">Užklausos</span><strong id="r-leads">28</strong></div>
+              <div class="res"><span id="l-clients">Nauji klientai</span><strong id="r-clients">3</strong></div>
+              <div class="res res-big"><span>Galimos pajamos</span><strong id="r-revenue">12 000 €</strong></div>
+              <div class="res"><span>Grąža iš 1 €</span><strong id="r-roas">12,0 €</strong></div>
+              <div class="res"><span id="l-cpl">Kaina už užklausą</span><strong id="r-cpl">35 €</strong><small id="r-cpl-range">įprastai 20–60 €</small></div>
             </div>
-            <p class="calc-note">Skaičiavimas remiasi vidutiniais rinkos rodikliais ir yra tik orientacinis. Tikslią prognozę jūsų verslui pateiksime po nemokamo audito.</p>
+            <p class="calc-note">Kainos už užklausą – 2025–2026 m. Lietuvos Google Ads ir Meta reklamos kainų orientyrai. Konversija į klientus ir kliento vertė – pradinės prielaidos: pakeiskite jas savo skaičiais. Tai įvertis, ne garantija.</p>
+            <details class="calc-sources">
+              <summary>Šaltiniai ir prielaidos</summary>
+              <p>Kaina už užklausą = kaina už paspaudimą Lietuvoje ÷ dalis paspaudimų, virstančių užklausa. Oficialaus Lietuvos tyrimo nėra, todėl naudojame vietinių agentūrų kainų apžvalgas ir tarptautinius konversijų rodiklius.</p>
+              <ul>
+                <li><b>Grožis, buitinės paslaugos:</b> paspaudimas ~0,5–1,5 €, konversija 6–10 % → 6–20 €</li>
+                <li><b>Sveikata, odontologija:</b> paspaudimas ~3–8 €, konversija 10–15 % → 20–60 €</li>
+                <li><b>Statyba, remontas, NT:</b> paspaudimas ~1–2 €, konversija 3–5 % → 20–60 €</li>
+                <li><b>B2B:</b> paspaudimas ~1–3 €, konversija 3–5 % → 25–80 €</li>
+                <li><b>Mokymai:</b> paspaudimas ~0,5–1,5 €, konversija 5–10 % → 8–30 €</li>
+                <li><b>E. parduotuvė:</b> paspaudimas ~0,3–0,6 €, pirkimų konversija 1–2 % → 15–50 € už pardavimą</li>
+              </ul>
+              <p>Šaltiniai: <a href="https://web1o.lt/en/tinklarastis/google-ads-kaina-lietuvoje-2026" target="_blank" rel="noopener">web1o.lt</a>, <a href="https://dmnt.lt/google-ads-kainos-lietuva/" target="_blank" rel="noopener">dmnt.lt</a>, <a href="https://www.webxpert.lt/en/blog/google-ads-vs-seo" target="_blank" rel="noopener">webxpert.lt</a>, <a href="https://www.fortema.lt/facebook-ads/facebook-reklamos-kaina-lietuvoje" target="_blank" rel="noopener">fortema.lt</a>, <a href="https://aiskit.agency/lt/facebook-reklama/" target="_blank" rel="noopener">aiskit.agency</a>, <a href="https://usermaven.com/blog/google-ads-benchmarks" target="_blank" rel="noopener">usermaven.com</a>, <a href="https://www.benchmarketing.org/benchmarks/google-ads" target="_blank" rel="noopener">benchmarketing.org</a>, <a href="https://www.wordstream.com/blog/2026-google-ads-benchmarks" target="_blank" rel="noopener">WordStream</a>.</p>
+            </details>
             <a class="btn btn-dark" href="#kontaktai" id="calc-cta">Noriu tikslaus skaičiavimo <span class="arrow">→</span></a>
           </div>
         </div>
@@ -991,7 +1013,9 @@
       rate: document.getElementById('c-rate'), deal: document.getElementById('c-deal')
     };
     const updateCalc = () => {
-      const budget = +calc.budget.value, cpl = +calc.niche.value, rate = +calc.rate.value, deal = Math.max(0, +calc.deal.value || 0);
+      const opt = calc.niche.selectedOptions[0], ecom = opt.dataset.mode === 'ecom';
+      const budget = +calc.budget.value, cpl = +calc.niche.value, deal = Math.max(0, +calc.deal.value || 0);
+      const rate = ecom ? 100 : +calc.rate.value;
       const leads = Math.floor(budget / cpl), clients = Math.round(leads * rate / 100), revenue = clients * deal;
       document.getElementById('o-budget').textContent = money(budget);
       document.getElementById('o-rate').textContent = rate + '%';
@@ -1000,7 +1024,21 @@
       document.getElementById('r-revenue').textContent = money(revenue);
       document.getElementById('r-roas').textContent = (revenue / budget).toFixed(1).replace('.', ',') + ' €';
       document.getElementById('r-cpl').textContent = money(cpl);
+      document.getElementById('r-cpl-range').textContent = 'įprastai ' + opt.dataset.min + '–' + opt.dataset.max + ' €';
+      // E. parduotuvėje rezultatas – pardavimai, todėl konversijos slankiklio nereikia
+      document.getElementById('rate-field').classList.toggle('is-disabled', ecom);
+      document.getElementById('l-leads').textContent = ecom ? 'Pardavimai' : 'Užklausos';
+      document.getElementById('l-clients').textContent = ecom ? 'Pirkėjai' : 'Nauji klientai';
+      document.getElementById('l-cpl').textContent = ecom ? 'Kaina už pardavimą' : 'Kaina už užklausą';
+      document.getElementById('l-deal').textContent = ecom ? 'Vidutinis užsakymas, €' : 'Vidutinė vieno kliento vertė, €';
     };
+    // Pakeitus sritį, nustatomos tai sričiai būdingos pradinės prielaidos
+    calc.niche.addEventListener('change', () => {
+      const opt = calc.niche.selectedOptions[0];
+      if (opt.dataset.mode !== 'ecom') calc.rate.value = opt.dataset.rate;
+      calc.deal.value = opt.dataset.deal;
+      updateCalc();
+    });
     Object.values(calc).forEach(el => el.addEventListener('input', updateCalc));
     updateCalc();
 
@@ -1012,7 +1050,7 @@
       const message = document.getElementById('f-message');
       if (!message.value.trim()) {
         message.value = 'Skaičiuoklė: biudžetas ' + money(budget) + '/mėn., sritis – ' + calc.niche.selectedOptions[0].text +
-          ', vidutinė kliento vertė ' + money(+calc.deal.value || 0) + '.\n\nApie mūsų verslą: ';
+          ', ' + document.getElementById('l-deal').textContent.replace(', €', '').toLowerCase() + ' ' + money(+calc.deal.value || 0) + '.\n\nApie mūsų verslą: ';
       }
       setTimeout(() => document.getElementById('f-name').focus({ preventScroll: true }), 600);
     });
