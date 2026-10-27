@@ -19,10 +19,14 @@
   <meta property="og:title" content="Novaro Digital – daugiau klientų iš interneto">
   <meta property="og:description" content="Svetainės, Google Ads, Facebook ir Instagram reklama, automatizacijos ir užklausų generavimas.">
   <meta property="og:image" content="https://novarodigital.lt/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Novaro Digital – paverčiame paspaudimus klientais">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#d4ff3a">
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,10 +50,7 @@
       {
         "@type": "FAQPage",
         "mainEntity": [
-          { "@type": "Question", "name": "Kiek kainuoja jūsų paslaugos?", "acceptedAnswer": { "@type": "Answer", "text": "Reklamos valdymas – nuo 390 € per mėnesį vienam kanalui. Nukreipimo puslapis – nuo 690 €, įmonės svetainė – nuo 1 490 €, automatizacijos – nuo 450 €." } },
-          { "@type": "Question", "name": "Koks minimalus reklamos biudžetas?", "acceptedAnswer": { "@type": "Answer", "text": "Rekomenduojame pradėti nuo 500 € per mėnesį vienam kanalui. Šis biudžetas mokamas tiesiai Google ar Meta." } },
-          { "@type": "Question", "name": "Per kiek laiko pamatysiu rezultatus?", "acceptedAnswer": { "@type": "Answer", "text": "Pirmosios užklausos iš reklamos dažniausiai ateina per 1–2 savaites, o stabilūs rezultatai – per 2–3 mėnesius optimizavimo." } },
-          { "@type": "Question", "name": "Ar reikia ilgalaikės sutarties?", "acceptedAnswer": { "@type": "Answer", "text": "Ne. Dirbame mėnesiais – jei nesate patenkinti, galite nutraukti bet kada." } }
+          { "@type": "Question", "name": "Per kiek laiko pamatysiu rezultatus?", "acceptedAnswer": { "@type": "Answer", "text": "Pirmosios užklausos iš reklamos dažniausiai ateina per 1–2 savaites, o stabilūs rezultatai – per 2–3 mėnesius optimizavimo." } }
         ]
       }
     ]
@@ -327,6 +328,42 @@
     .calc-sources a { color: var(--blue); font-weight: 600; }
     .calc-results .btn { margin-top: auto; align-self: flex-start; }
 
+    /* ---------- Kainos ---------- */
+    .pricing-sec { background: var(--white); border-block: var(--border); }
+    .pricing { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 64px; align-items: stretch; }
+    .price-card {
+      position: relative; display: flex; flex-direction: column; background: var(--paper); border: var(--border); border-radius: var(--radius);
+      box-shadow: var(--shadow); padding: 34px 30px 30px; transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .price-card.visible { transition: transform .2s ease, box-shadow .2s ease, opacity .7s ease; transition-delay: 0s; }
+    .price-card.visible:hover { transform: translateY(-4px); box-shadow: 10px 10px 0 var(--ink); }
+    .price-card--featured { background: var(--lime); box-shadow: 10px 10px 0 var(--ink); }
+    .price-card--featured.visible:hover { box-shadow: 14px 14px 0 var(--ink); }
+    .price-badge {
+      position: absolute; top: -18px; right: 22px; background: var(--pink); color: var(--white); border: var(--border); border-radius: 999px;
+      padding: 6px 16px; font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; box-shadow: 3px 3px 0 var(--ink); transform: rotate(3deg);
+    }
+    .price-card h3 { font-size: 1.3rem; margin-bottom: 10px; padding-right: 8px; }
+    .price-for { font-style: italic; color: var(--ink-soft); min-height: 3.2em; margin: 0 0 22px; }
+    .price { border-block: 2px solid var(--ink); padding: 18px 0; margin: 0 0 22px; }
+    .price strong { display: block; font-family: var(--display); font-weight: 800; font-size: clamp(1.5rem, 2.1vw, 1.85rem); line-height: 1.05; letter-spacing: -.03em; white-space: nowrap; }
+    .price span { display: block; margin-top: 8px; font-size: .9rem; font-weight: 600; color: var(--ink-soft); min-height: 3em; }
+    .price-list { gap: 12px; margin: 0 0 24px; }
+    .price-list li { font-size: .97rem; gap: 12px; }
+    .price-list li::before { width: 24px; height: 24px; font-size: .8rem; }
+    .price-card--featured .price-list li::before { background: var(--ink); color: var(--lime); }
+    .price-example { background: var(--white); border: 2px solid var(--ink); border-radius: 14px; padding: 12px 14px; font-size: .92rem; margin: 0 0 24px; }
+    .price-card .btn { margin-top: auto; align-self: stretch; }
+    .price-note { max-width: 860px; margin: 40px auto 0; text-align: center; font-size: .86rem; color: var(--ink-soft); }
+    .pricing-faq-title { text-align: center; margin: 88px 0 0; font-size: clamp(1.5rem, 3vw, 2.2rem); }
+    .pricing-faq { margin-top: 32px; }
+    .pricing-cta {
+      display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; margin-top: 88px;
+      background: var(--ink); color: #c9c9d1; border: var(--border); border-radius: var(--radius); box-shadow: 8px 8px 0 var(--lime); padding: 44px 48px;
+    }
+    .pricing-cta h2 { color: var(--white); margin: 0 0 8px; font-size: clamp(1.6rem, 3.4vw, 2.6rem); }
+    .pricing-cta p { margin: 0; max-width: 560px; font-size: 1.05rem; }
+
     /* ---------- Procesas ---------- */
     .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; margin-top: 56px; counter-reset: step; list-style: none; padding: 0; position: relative; }
     .steps::before { content: ""; position: absolute; top: 34px; left: 8%; right: 8%; border-top: 3px dashed var(--ink); z-index: 0; }
@@ -428,9 +465,13 @@
     }
 
     /* ---------- Mobilus ---------- */
-    @media (max-width: 1020px) {
+    .logo, .nav .btn { white-space: nowrap; }
+    /* Šeši meniu punktai telpa tik nuo ~1120 px – siauresniuose ekranuose rodome mobilųjį meniu */
+    @media (max-width: 1120px) {
       .nav-links, .nav .btn { display: none; }
       .menu-toggle { display: grid; }
+    }
+    @media (max-width: 1020px) {
       .hero-grid, .about, .contact, .calc { grid-template-columns: 1fr; }
       .hero-visual { max-width: 520px; width: 100%; margin: 20px auto 0; }
       .calc-results { border-left: 0; border-top: var(--border); }
@@ -439,6 +480,8 @@
       .steps { grid-template-columns: 1fr 1fr; row-gap: 40px; }
       .steps::before { display: none; }
       .about { gap: 48px; }
+      .pricing { grid-template-columns: 1fr; max-width: 560px; margin-left: auto; margin-right: auto; gap: 40px; }
+      .price-for, .price span { min-height: 0; }
     }
     @media (max-width: 640px) {
       .section { padding: 80px 0; }
@@ -453,6 +496,9 @@
       .stat { padding: 20px 16px; }
       .steps { grid-template-columns: 1fr; }
       .calc-inputs, .calc-results, .contact-form { padding: 24px; }
+      .price-card { padding: 30px 22px 24px; }
+      .pricing-cta { padding: 32px 24px; }
+      .pricing-cta .btn { width: 100%; }
       .dash-kpis strong { font-size: 1rem; }
       .btn { padding: 14px 22px; }
     }
@@ -470,6 +516,7 @@
           <li><a href="#paslaugos">Paslaugos</a></li>
           <li><a href="#rezultatai">Rezultatai</a></li>
           <li><a href="#skaiciuokle">Skaičiuoklė</a></li>
+          <li><a href="#kainos">Kainos</a></li>
           <li><a href="#procesas">Procesas</a></li>
           <li><a href="#duk">DUK</a></li>
         </ul>
@@ -489,6 +536,7 @@
       <a href="#kodel-mes">Kodėl mes</a>
       <a href="#rezultatai">Rezultatai</a>
       <a href="#skaiciuokle">Skaičiuoklė</a>
+      <a href="#kainos">Kainos</a>
       <a href="#procesas">Procesas</a>
       <a href="#duk">DUK</a>
       <a href="#kontaktai">Nemokamas auditas →</a>
@@ -756,6 +804,94 @@
       </div>
     </section>
 
+    <!-- Kainos: tekstas patvirtintas (novaro-kainos-sekcija.md, v1) – nekeisti be patvirtinimo. Kainos be PVM. -->
+    <section class="section pricing-sec" id="kainos">
+      <div class="wrap">
+        <div class="reveal center">
+          <span class="eyebrow">Kainos</span>
+          <h2>Aiškios kainos. Jokių ilgalaikių sutarčių.</h2>
+          <p class="lead">Pasirinkite, nuo ko pradėti. Kainą žinote iš anksto, o reklamos paskyros ir duomenys visada priklauso jums.</p>
+        </div>
+
+        <div class="pricing">
+          <article class="price-card reveal">
+            <h3>Svetainė + priežiūra</h3>
+            <p class="price-for">Kai svetainė pasenusi arba jos nėra, o klientai jūsų ieško telefone.</p>
+            <p class="price"><strong>nuo 690 €</strong><span>vienkartinė kaina · priežiūra nuo 59 €/mėn.</span></p>
+            <ul class="checks price-list">
+              <li>Svetainė iki 5 puslapių, patogi telefone</li>
+              <li>Paslaugos ir kainos, darbų galerija, atsiliepimai</li>
+              <li>Užklausos forma arba registracijos mygtukas</li>
+              <li>Sutvarkytas Google verslo profilis</li>
+              <li>Matote, kiek užklausų atneša svetainė</li>
+              <li>Pirmi 3 mėn. priežiūros įskaičiuoti: talpinimas, atnaujinimai, smulkūs pakeitimai</li>
+            </ul>
+            <a class="btn btn-dark" href="#kontaktai">Gauti nemokamą auditą <span class="arrow" aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="price-card reveal reveal-d1">
+            <h3>Klientų srautas</h3>
+            <p class="price-for">Kai svetainė jau yra, bet užklausų per mažai.</p>
+            <p class="price"><strong>nuo 290 €/mėn.</strong><span>paruošimas 199 € · Meta ir Google kartu – 390 €/mėn.</span></p>
+            <ul class="checks price-list">
+              <li>Reklama Facebook ir Instagram, o statybų ir renovacijos įmonėms – ir Google paieškoje</li>
+              <li>Įdiegiame sekimą, kad matytumėte, kiek kainuoja viena užklausa</li>
+              <li>Reklamos tekstai ir vizualai</li>
+              <li>Kas mėnesį testuojame, stabdome tai, kas neatsiperka, ir pateikiame ataskaitą su skaičiais</li>
+              <li>Reklamos biudžetą mokate tiesiai Meta ar Google, o paskyra priklauso jums</li>
+            </ul>
+            <p class="price-example"><b>Pavyzdys:</b> statybos įmonei per pirmą mėnesį – 27 užklausos po 7 €.</p>
+            <a class="btn btn-dark" href="#kontaktai">Gauti nemokamą auditą <span class="arrow" aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="price-card price-card--featured reveal reveal-d2">
+            <span class="price-badge">Geriausia vertė</span>
+            <h3>Augimo sistema</h3>
+            <p class="price-for">Kai norite, kad užklausos ateitų ir nė viena nepasimestų.</p>
+            <p class="price"><strong>nuo 490 €/mėn.</strong><span>svetainė už pusę kainos – 345 €</span></p>
+            <ul class="checks price-list">
+              <li>Viskas, kas įeina į „Svetainė + priežiūra“ ir „Klientų srautas“</li>
+              <li>Kiekvienas užklausą palikęs klientas iškart gauna atsakymą el. paštu ar SMS</li>
+              <li>Visos užklausos vienoje vietoje, nė viena nepasimeta</li>
+              <li>Priminimai klientams ir automatiniai atsiliepimų prašymai</li>
+              <li>Mėnesio ataskaita: iš kur ateina klientai ir kiek jie kainuoja</li>
+            </ul>
+            <a class="btn btn-dark" href="#kontaktai">Gauti nemokamą auditą <span class="arrow" aria-hidden="true">→</span></a>
+          </article>
+        </div>
+
+        <p class="price-note">Kainos nurodytos be PVM. Reklamos biudžetas į kainą neįeina. Sutartį galite nutraukti bet kurį mėnesį. „Augimo sistemoje“ svetainę gaunate už pusę kainos – jei paketą nutrauksite per pirmus 6 mėnesius, likusius 345 € sumokate atskirai.</p>
+
+        <h3 class="pricing-faq-title reveal">Dažni klausimai</h3>
+        <div class="faq pricing-faq reveal">
+          <details>
+            <summary>Kodėl kaina „nuo“?</summary>
+            <p>Didesnė svetainė ar daugiau reklamos kanalų kainuoja daugiau. Galutinę kainą pasakome po nemokamo audito, dar prieš pradedant darbą.</p>
+          </details>
+          <details>
+            <summary>Ar reikia pasirašyti ilgalaikę sutartį?</summary>
+            <p>Ne. Mokate kas mėnesį ir galite sustoti bet kada. Vienintelė sąlyga – jei svetainę gavote už pusę kainos su „Augimo sistema“ ir paketą nutraukiate per pirmus 6 mėnesius, sumokate likusius 345 €.</p>
+          </details>
+          <details>
+            <summary>Kiek skirti reklamai?</summary>
+            <p>Daugeliui vietinių paslaugų verslų pradžiai pakanka 200–500 € per mėnesį. Tikslią sumą pasiūlysime pagal jūsų tikslus.</p>
+          </details>
+          <details>
+            <summary>Kam priklauso svetainė ir reklamos paskyros?</summary>
+            <p>Jums. Jei nuspręsite dirbti su kitais, viską pasiimate su savimi.</p>
+          </details>
+        </div>
+
+        <div class="pricing-cta reveal">
+          <div>
+            <h2>Nežinote, nuo ko pradėti?</h2>
+            <p>Užsisakykite nemokamą auditą. Parodysime, kur prarandate klientus ir ką keisti pirmiausia.</p>
+          </div>
+          <a class="btn btn-lime" href="#kontaktai">Gauti nemokamą auditą <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="procesas">
       <div class="wrap">
         <div class="reveal center">
@@ -780,20 +916,8 @@
         </div>
         <div class="faq reveal">
           <details>
-            <summary>Kiek kainuoja jūsų paslaugos?</summary>
-            <p>Reklamos valdymas – nuo 390 € per mėnesį vienam kanalui (Google arba Meta). Nukreipimo puslapis – nuo 690 €, įmonės svetainė – nuo 1 490 €, automatizacijos – nuo 450 €. Tikslią kainą pateikiame po nemokamo audito, be paslėptų mokesčių.</p>
-          </details>
-          <details>
-            <summary>Koks minimalus reklamos biudžetas?</summary>
-            <p>Rekomenduojame pradėti nuo 500 € per mėnesį vienam kanalui. Tai leidžia per pirmąjį mėnesį surinkti pakankamai duomenų optimizavimui. Šis biudžetas mokamas tiesiai Google ar Meta, ne mums.</p>
-          </details>
-          <details>
             <summary>Per kiek laiko pamatysiu rezultatus?</summary>
             <p>Pirmosios užklausos iš reklamos dažniausiai ateina per 1–2 savaites, o stabilūs rezultatai – per 2–3 mėnesius optimizavimo. SEO rezultatai paprastai matomi per 3–6 mėnesius.</p>
-          </details>
-          <details>
-            <summary>Ar reikia ilgalaikės sutarties?</summary>
-            <p>Ne. Dirbame mėnesiais – jei nesate patenkinti, galite nutraukti bet kada. Visos reklamos paskyros ir duomenys lieka jums.</p>
           </details>
           <details>
             <summary>Ar galite dirbti su mano esama svetaine?</summary>

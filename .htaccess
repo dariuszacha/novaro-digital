@@ -44,7 +44,7 @@ DirectoryIndex index.html
 AddType application/manifest+json .webmanifest
 
 # Paslėpti tvarkymo failus
-<FilesMatch "^(README\.md|\.git.*)$">
+<FilesMatch "(\.md|^\.git.*)$">
   Require all denied
 </FilesMatch>
 
