@@ -47,7 +47,7 @@ vienkartinė kaina · priežiūra nuo 59 €/mėn.
 **nuo 290 €/mėn.**
 paruošimas 199 € · Meta ir Google kartu – 390 €/mėn.
 
-- Reklama Facebook ir Instagram, o statybų ir renovacijos įmonėms – ir Google paieškoje
+- Reklama Facebook, Instagram ir Google paieškoje – parenkame kanalus pagal tai, kur jūsų klientai ieško paslaugų
 - Įdiegiame sekimą, kad matytumėte, kiek kainuoja viena užklausa
 - Reklamos tekstai ir vizualai
 - Kas mėnesį testuojame, stabdome tai, kas neatsiperka, ir pateikiame ataskaitą su skaičiais
