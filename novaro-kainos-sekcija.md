@@ -32,6 +32,7 @@ Pasirinkite, nuo ko pradėti. Kainą žinote iš anksto, o reklamos paskyros ir 
 vienkartinė kaina · priežiūra nuo 59 €/mėn.
 
 - Svetainė iki 5 puslapių, patogi telefone
+- 2 pataisymų ratai prieš paleidimą
 - Paslaugos ir kainos, darbų galerija, atsiliepimai
 - Užklausos forma arba registracijos mygtukas
 - Sutvarkytas Google verslo profilis
@@ -89,6 +90,9 @@ Daugeliui vietinių paslaugų verslų pradžiai pakanka 200–500 € per mėnes
 
 **Kam priklauso svetainė ir reklamos paskyros?**
 Jums. Jei nuspręsite dirbti su kitais, viską pasiimate su savimi.
+
+**O jei norėsiu daugiau pakeitimų?**
+Į kainą įeina 2 pataisymų ratai prieš paleidimą. Papildomus pakeitimus įvertiname atskirai, o po paleidimo smulkūs pakeitimai įeina į priežiūrą.
 
 ### Final CTA
 
