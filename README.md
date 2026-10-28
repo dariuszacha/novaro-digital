@@ -19,7 +19,7 @@
 2. **Skaičiai ir rezultatai** – pradžios statistika (27 užklausos, 2 d. d., 0, 100 %) ir viena „Pirmieji rezultatai“ kortelė. Naujus rezultatus skelbkite tik kliento leidimu.
 3. **Kainos** – sekcija `#kainos`, tekstas patvirtintas `novaro-kainos-sekcija.md` (v1); keisti tik su nauja patvirtinta versija. Kainos rodomos be PVM. Bendrajame DUK kainų nebėra, kad nesikirstų su kainų sekcija; `<head>` JSON-LD bloke – tik bendro DUK klausimai.
 4. **Spalvos** – `index.html` viršuje, `:root { --lime: …; --pink: …; --blue: … }`.
-5. **Paslėpta nuo Google** – kol duomenys pavyzdiniai, svetainė pažymėta `noindex`. Paleidžiant: `index.html` pakeiskite `<meta name="robots">` į `index,follow` ir ištrinkite `X-Robots-Tag` eilutę iš `.htaccess`.
+5. **Matoma Google** – svetainė paleista novarodigital.lt (`index,follow`, be `X-Robots-Tag`). Kanoniniai adresai ir `og:url` rodo į https://novarodigital.lt/.
 4. **`contact.php`** – viršuje įrašykite `$TO_EMAIL` ir `$FROM_EMAIL` (jūsų domeno adresas).
 5. **Google Analytics (nebūtina)** – `index.html` apačioje `const GA_ID = 'G-...'`. Kol tuščia, analitika ir slapukų juosta neįjungiamos.
 6. **`og-image.png`** – 1200×630 px, sukurtas iš prekės ženklo šablono `templates/og-image.html`. Jame skaičiai „27“ ir „0“ – pakeitus statistiką, atnaujinkite ir jį.
