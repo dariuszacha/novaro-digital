@@ -2,7 +2,7 @@
 // Kontaktų formos apdorojimas: patikrina duomenis ir išsiunčia laišką jums.
 
 // ========== KEISTI ==========
-$TO_EMAIL   = 'info@novarodigital.lt';    // kur gausite užklausas
+$TO_EMAIL   = 'darius@novarodigital.lt';  // kur gausite užklausas (kol nėra info@ adreso)
 $FROM_EMAIL = 'noreply@novarodigital.lt'; // turi būti jūsų domeno adresas, kitaip laiškai pateks į šlamštą
 $SITE_NAME  = 'Novaro Digital';
 $MIN_SECONDS = 3;                          // greičiau užpildyta forma laikoma botu

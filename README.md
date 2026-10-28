@@ -13,16 +13,16 @@
 
 ## Ką pakeisti prieš įkeliant
 
-> **Visi duomenys yra pavyzdiniai.** „Novaro Digital“ – išgalvotas pavadinimas, kontaktai, skaičiai, klientų atvejai ir kainos – sugalvoti. Prieš skelbiant pakeiskite juos tikrais.
+> **Tik tikri duomenys.** Skaičiai, rezultatai ir kontaktai svetainėje – tikri (atnaujinta 2026-10-28). Nepridėkite skaičių ar klientų atvejų, kurių negalite įrodyti.
 
-1. **`index.html`** – ieškokite „Novaro Digital“, „novarodigital.lt“, „+370 612 34567“ / „+37061234567“, logotipo raidės „N“; skyrelis `<head>` pažymėtas `KEISTI`.
-2. **Skaičiai ir rezultatai** – pradžios statistika (85+, €2,3 mln., 4,8×, 24 val.) ir „Rezultatai“ kortelės pažymėtos `PAVYZDINIAI DUOMENYS`. Įrašykite tik tikrus savo duomenis.
+1. **Kontaktai** – `index.html`: telefonas „+370 606 79982“ (`tel:+37060679982`), el. paštas info@novarodigital.lt; tas pats `<head>` JSON-LD bloke. Rekvizitai (MB Wellbeing solutions) – poraštėje ir `privatumo-politika/index.html`.
+2. **Skaičiai ir rezultatai** – pradžios statistika (27 užklausos, 2 d. d., 0, 100 %) ir viena „Pirmieji rezultatai“ kortelė. Naujus rezultatus skelbkite tik kliento leidimu.
 3. **Kainos** – sekcija `#kainos`, tekstas patvirtintas `novaro-kainos-sekcija.md` (v1); keisti tik su nauja patvirtinta versija. Kainos rodomos be PVM. Bendrajame DUK kainų nebėra, kad nesikirstų su kainų sekcija; `<head>` JSON-LD bloke – tik bendro DUK klausimai.
 4. **Spalvos** – `index.html` viršuje, `:root { --lime: …; --pink: …; --blue: … }`.
 5. **Paslėpta nuo Google** – kol duomenys pavyzdiniai, svetainė pažymėta `noindex`. Paleidžiant: `index.html` pakeiskite `<meta name="robots">` į `index,follow` ir ištrinkite `X-Robots-Tag` eilutę iš `.htaccess`.
 4. **`contact.php`** – viršuje įrašykite `$TO_EMAIL` ir `$FROM_EMAIL` (jūsų domeno adresas).
 5. **Google Analytics (nebūtina)** – `index.html` apačioje `const GA_ID = 'G-...'`. Kol tuščia, analitika ir slapukų juosta neįjungiamos.
-6. **`og-image.png`** – jau sukurtas (1200×630 px). Jame pavyzdiniai skaičiai (4,8×, 24 val.) – pakeitus statistiką, atnaujinkite ir jį.
+6. **`og-image.png`** – 1200×630 px, sukurtas iš prekės ženklo šablono `templates/og-image.html`. Jame skaičiai „27“ ir „0“ – pakeitus statistiką, atnaujinkite ir jį.
 
 ## Įkėlimas
 
