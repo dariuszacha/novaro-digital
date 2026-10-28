@@ -6,7 +6,58 @@ $TO_EMAIL   = 'darius@novarodigital.lt';  // kur gausite užklausas (kol nėra i
 $FROM_EMAIL = 'noreply@novarodigital.lt'; // turi būti jūsų domeno adresas, kitaip laiškai pateks į šlamštą
 $SITE_NAME  = 'Novaro Digital';
 $MIN_SECONDS = 3;                          // greičiau užpildyta forma laikoma botu
+
+// SMTP nustatymai (slaptažodis) laikomi ATSKIRAME faile UŽ public_html ribų, kad nepatektų nei į Git, nei į internetą.
+// Failas: <aplankas virš public_html>/novaro-mail.php, turinys:
+//   <?php return ['host' => 'smtp.hostinger.com', 'port' => 465, 'user' => 'darius@novarodigital.lt', 'pass' => 'PAŠTO SLAPTAŽODIS'];
+// Jei failo nėra, laiškas siunčiamas per PHP mail() – jis veikia, bet dažnai patenka į šlamštą.
+$SMTP_CONFIG_FILE = dirname(__DIR__) . '/novaro-mail.php';
 // ============================
+
+// Siunčia laišką per Hostinger SMTP su prisijungimu – toks laiškas pasirašomas DKIM ir praeina SPF/DMARC patikrą.
+function smtp_send(array $cfg, string $to, string $subject, string $body, array $headers): bool {
+    $fp = @stream_socket_client('ssl://' . $cfg['host'] . ':' . (int)$cfg['port'], $errno, $errstr, 15);
+    if (!$fp) {
+        error_log("contact.php SMTP: nepavyko prisijungti ($errno $errstr)");
+        return false;
+    }
+    stream_set_timeout($fp, 15);
+
+    $read = function () use ($fp): string {
+        $data = '';
+        while (($line = fgets($fp, 515)) !== false) {
+            $data .= $line;
+            if (strlen($line) < 4 || $line[3] === ' ') break; // paskutinė atsakymo eilutė
+        }
+        return $data;
+    };
+    $cmd = function (?string $line, array $okCodes) use ($fp, $read): bool {
+        if ($line !== null) fwrite($fp, $line . "\r\n");
+        $reply = $read();
+        $ok = in_array((int)substr($reply, 0, 3), $okCodes, true);
+        if (!$ok) error_log('contact.php SMTP: netikėtas atsakymas: ' . trim($reply));
+        return $ok;
+    };
+
+    // Eilutės CRLF, o taškas eilutės pradžioje dubliuojamas (SMTP reikalavimas)
+    $text = preg_replace('/^\./m', '..', str_replace(["\r\n", "\r"], "\n", $body));
+    $message = implode("\r\n", array_merge(["To: <$to>", "Subject: $subject"], $headers))
+             . "\r\n\r\n" . str_replace("\n", "\r\n", $text);
+
+    $ok = $cmd(null, [220])
+       && $cmd('EHLO novarodigital.lt', [250])
+       && $cmd('AUTH LOGIN', [334])
+       && $cmd(base64_encode($cfg['user']), [334])
+       && $cmd(base64_encode($cfg['pass']), [235])
+       && $cmd('MAIL FROM:<' . $cfg['user'] . '>', [250])
+       && $cmd("RCPT TO:<$to>", [250, 251])
+       && $cmd('DATA', [354])
+       && $cmd($message . "\r\n.", [250]);
+
+    $cmd('QUIT', [221]);
+    fclose($fp);
+    return $ok;
+}
 
 header('Content-Type: application/json; charset=utf-8');
 header('X-Content-Type-Options: nosniff');
@@ -72,15 +123,31 @@ $body = "Vardas: $name\n"
       . "\nŽinutė:\n$message\n\n"
       . "---\nIšsiųsta iš $SITE_NAME svetainės " . date('Y-m-d H:i');
 
-$headers = implode("\r\n", [
-    "From: $SITE_NAME <$FROM_EMAIL>",
-    "Reply-To: $email",
-    'MIME-Version: 1.0',
-    'Content-Type: text/plain; charset=UTF-8',
-    'Content-Transfer-Encoding: 8bit',
-]);
+$smtp = is_file($SMTP_CONFIG_FILE) ? include $SMTP_CONFIG_FILE : null;
 
-if (!mail($TO_EMAIL, $subject, $body, $headers, "-f$FROM_EMAIL")) {
+if (is_array($smtp) && !empty($smtp['user']) && !empty($smtp['pass'])) {
+    // Siuntėjas turi būti tas pats pašto dėžutės adresas, kuriuo prisijungiama prie SMTP
+    $sent = smtp_send($smtp, $TO_EMAIL, $subject, $body, [
+        'Date: ' . date('r'),
+        'Message-ID: <' . bin2hex(random_bytes(12)) . '@novarodigital.lt>',
+        "From: $SITE_NAME <{$smtp['user']}>",
+        "Reply-To: $email",
+        'MIME-Version: 1.0',
+        'Content-Type: text/plain; charset=UTF-8',
+        'Content-Transfer-Encoding: 8bit',
+    ]);
+} else {
+    $headers = implode("\r\n", [
+        "From: $SITE_NAME <$FROM_EMAIL>",
+        "Reply-To: $email",
+        'MIME-Version: 1.0',
+        'Content-Type: text/plain; charset=UTF-8',
+        'Content-Transfer-Encoding: 8bit',
+    ]);
+    $sent = mail($TO_EMAIL, $subject, $body, $headers, "-f$FROM_EMAIL");
+}
+
+if (!$sent) {
     respond(500, false, 'Nepavyko išsiųsti. Parašykite mums tiesiogiai el. paštu.');
 }
 

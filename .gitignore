@@ -3,6 +3,9 @@ Thumbs.db
 desktop.ini
 .DS_Store
 
+# Secrets – SMTP password file must never be committed
+novaro-mail.php
+
 # Editor and tool settings
 .vscode/
 .claude/
