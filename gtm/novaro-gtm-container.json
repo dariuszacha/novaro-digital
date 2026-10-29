@@ -26,7 +26,7 @@
         ],
         "fingerprint": "1",
         "firingTriggerId": ["2147479553", "10"],
-        "tagFiringOption": "ONCE_PER_LOAD",
+        "tagFiringOption": "UNLIMITED",
         "consentSettings": { "consentStatus": "NEEDED", "consentType": { "type": "LIST", "list": [ { "type": "TEMPLATE", "value": "analytics_storage" } ] } },
         "monitoringMetadata": { "type": "MAP" }
       },
@@ -109,7 +109,7 @@
         ],
         "fingerprint": "1",
         "firingTriggerId": ["2147479553", "10"],
-        "tagFiringOption": "ONCE_PER_LOAD",
+        "tagFiringOption": "UNLIMITED",
         "consentSettings": { "consentStatus": "NEEDED", "consentType": { "type": "LIST", "list": [ { "type": "TEMPLATE", "value": "ad_storage" } ] } },
         "monitoringMetadata": { "type": "MAP" }
       },
@@ -124,7 +124,6 @@
         "fingerprint": "1",
         "firingTriggerId": ["11"],
         "tagFiringOption": "ONCE_PER_EVENT",
-        "setupTag": [ { "tagName": "Meta Pixel - Base", "stopOnSetupFailure": true } ],
         "consentSettings": { "consentStatus": "NEEDED", "consentType": { "type": "LIST", "list": [ { "type": "TEMPLATE", "value": "ad_storage" } ] } },
         "monitoringMetadata": { "type": "MAP" }
       },
@@ -139,7 +138,6 @@
         "fingerprint": "1",
         "firingTriggerId": ["15"],
         "tagFiringOption": "ONCE_PER_EVENT",
-        "setupTag": [ { "tagName": "Meta Pixel - Base", "stopOnSetupFailure": true } ],
         "consentSettings": { "consentStatus": "NEEDED", "consentType": { "type": "LIST", "list": [ { "type": "TEMPLATE", "value": "ad_storage" } ] } },
         "monitoringMetadata": { "type": "MAP" }
       }

@@ -46,17 +46,24 @@ IDs: **GTM** GTM-WCJP88J8 · **GA4** G-Y5Y06G1R8K · **Meta Pixel** 242991544087
 
 | Tag | Type | Fires on | Consent (Advanced Settings → Consent Settings → Require additional consent) | Firing option |
 |---|---|---|---|---|
-| Google tag - G-Y5Y06G1R8K | Google tag, Tag ID `{{Const - GA4 Measurement ID}}` | All Pages + CE - cookie_consent_update | `analytics_storage` | Once per page |
+| Google tag - G-Y5Y06G1R8K | Google tag, Tag ID `{{Const - GA4 Measurement ID}}` | All Pages + CE - cookie_consent_update | `analytics_storage` | **Unlimited** |
 | GA4 event - generate_lead | GA4 Event, Measurement ID `{{Const - GA4 Measurement ID}}`, event `generate_lead`, param `form_id` = `{{DLV - form_id}}` | CE - generate_lead | `analytics_storage` | Once per event |
 | GA4 event - phone_click | GA4 Event, event `phone_click`, param `link_url` = `{{DLV - link_url}}` | CE - phone_click | `analytics_storage` | Once per event |
 | GA4 event - email_click | GA4 Event, event `email_click`, param `link_url` = `{{DLV - link_url}}` | CE - email_click | `analytics_storage` | Once per event |
 | GA4 event - calculator_used | GA4 Event, event `calculator_used` | CE - calculator_used | `analytics_storage` | Once per event |
-| Meta Pixel - Base | Custom HTML: Meta base code with `fbq('init', '{{Const - Meta Pixel ID}}')` + `PageView` | All Pages + CE - cookie_consent_update | `ad_storage` | Once per page |
-| Meta Pixel - Lead | Custom HTML: `fbq('track', 'Lead')` | CE - generate_lead | `ad_storage` | Once per event; Tag Sequencing: fire "Meta Pixel - Base" before |
-| Meta Pixel - Contact | Custom HTML: `fbq('track', 'Contact')` | CE - phone_click or email_click | `ad_storage` | Once per event; Tag Sequencing: fire "Meta Pixel - Base" before |
+| Meta Pixel - Base | Custom HTML: Meta base code with `fbq('init', '{{Const - Meta Pixel ID}}')` + `PageView` | All Pages + CE - cookie_consent_update | `ad_storage` | **Unlimited** |
+| Meta Pixel - Lead | Custom HTML: `fbq('track', 'Lead')` | CE - generate_lead | `ad_storage` | Once per event; no tag sequencing |
+| Meta Pixel - Contact | Custom HTML: `fbq('track', 'Contact')` | CE - phone_click or email_click | `ad_storage` | Once per event; no tag sequencing |
 
 Why the extra `CE - cookie_consent_update` trigger: if a visitor clicks "Sutinku" after the page has loaded,
 the Google tag and Meta base code (blocked on page load) fire immediately instead of waiting for the next page.
+
+Why **Unlimited** (not "Once per page") on those two tags: GTM counts the consent-blocked attempt on All Pages
+as the tag's one firing, so with "Once per page" they would not fire on `cookie_consent_update`. Unlimited does
+not cause duplicates: on All Pages they are blocked until consent, and the site pushes `cookie_consent_update`
+only when consent actually changes to granted (not on later visits, not on a repeated "Sutinku").
+For the same reason Lead/Contact must **not** use tag sequencing with the base tag (it would re-send PageView);
+by the time a visitor can trigger them, the base code has already loaded.
 
 **Consent mode choice: basic.** Every tag requires consent, so nothing is sent to Google or Meta before "Sutinku".
 This matches the privacy policy ("only with consent"). If you later want GA4 *advanced* consent mode

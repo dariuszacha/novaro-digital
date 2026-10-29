@@ -12,11 +12,13 @@
   function save(value) { try { localStorage.setItem(KEY, value); } catch (e) {} }
 
   // „Sutinku“ – visi keturi signalai „granted“, „Atsisakyti“ – lieka „denied“
-  function apply(choice) {
+  function apply(choice, previous) {
     var state = choice === 'granted' ? 'granted' : 'denied';
+    var before = previous === 'granted' ? 'granted' : 'denied';
     gtag('consent', 'update', { ad_storage: state, ad_user_data: state, ad_personalization: state, analytics_storage: state });
-    // GTM žymos, laukusios sutikimo, suveikia nuo šio įvykio (žr. gtm/README.md)
-    window.dataLayer.push({ event: 'cookie_consent_update', consent_choice: state });
+    // GTM žymos, laukusios sutikimo, suveikia nuo šio įvykio (žr. gtm/README.md).
+    // Siunčiame tik kai sutikimas tikrai pasikeitė – pakartotinis „Sutinku“ nedubliuoja page_view / PageView.
+    if (state !== before) window.dataLayer.push({ event: 'cookie_consent_update', consent_choice: state });
   }
 
   var banner = document.getElementById('cookie');
@@ -24,8 +26,9 @@
     banner.querySelectorAll('[data-consent]').forEach(function (btn) {
       btn.addEventListener('click', function () {
         var choice = btn.getAttribute('data-consent');
+        var previous = read();
         save(choice);
-        apply(choice);
+        apply(choice, previous);
         banner.classList.remove('show');
       });
     });
