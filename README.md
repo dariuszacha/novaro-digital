@@ -10,6 +10,9 @@
 | `og-image.png` | Paveikslėlis, rodomas dalinantis nuoroda (1200×630) |
 | `brand/novaro-logo-horizontal.png` | Logotipas el. pašto parašui |
 | `site.webmanifest` | Svetainės pavadinimas ir spalvos telefonams |
+| `tracking.js` | Slapukų juosta (Google Consent Mode v2) ir `phone_click` / `email_click` įvykiai |
+| `sitemap.xml`, `robots.txt` | Svetainės žemėlapis paieškos sistemoms |
+| `gtm/` | GTM konteinerio failas ir instrukcijos (neviešas) |
 
 ## Ką pakeisti prieš įkeliant
 
@@ -21,7 +24,7 @@
 4. **Spalvos** – `index.html` viršuje, `:root { --lime: …; --pink: …; --blue: … }`.
 5. **Matoma Google** – svetainė paleista novarodigital.lt (`index,follow`, be `X-Robots-Tag`). Kanoniniai adresai ir `og:url` rodo į https://novarodigital.lt/.
 4. **`contact.php`** – viršuje įrašykite `$TO_EMAIL` ir `$FROM_EMAIL` (jūsų domeno adresas).
-5. **Google Analytics (nebūtina)** – `index.html` apačioje `const GA_ID = 'G-...'`. Kol tuščia, analitika ir slapukų juosta neįjungiamos.
+5. **Analitika** – Google Tag Manager GTM-WCJP88J8 abiejuose puslapiuose; GA4 (G-Y5Y06G1R8K) ir Meta Pixel įkeliami tik per GTM, tik sutikus. Žr. `gtm/README.md`. Naujus puslapius papildykite tuo pačiu `<head>` sutikimo + GTM fragmentu ir `tracking.js`, o `sitemap.xml` – nauju adresu.
 6. **`og-image.png`** – 1200×630 px, sukurtas iš prekės ženklo šablono `templates/og-image.html`. Jame skaičiai „27“ ir „0“ – pakeitus statistiką, atnaujinkite ir jį.
 
 ## Įkėlimas

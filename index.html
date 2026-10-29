@@ -4,6 +4,25 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
+  <!-- Google Consent Mode v2: kol lankytojas nesutiko, viskas atmesta. Turi būti PRIEŠ GTM. Raktas sutampa su tracking.js -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied', wait_for_update: 500 });
+    try {
+      if (localStorage.getItem('novaro_cookie_consent') === 'granted') {
+        gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted' });
+      }
+    } catch (e) {}
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WCJP88J8');</script>
+  <!-- End Google Tag Manager -->
+
   <!-- ========== KEISTI: pavadinimas, aprašymas, domenas ========== -->
   <title>Novaro Digital – svetainės, Google ir Facebook reklama, automatizacijos</title>
   <meta name="description" content="Kuriame svetaines, valdome Google Ads ir Meta reklamą, automatizuojame verslo procesus ir pritraukiame užklausų. Skaitmeninė rinkodara nuo strategijos iki rezultatų.">
@@ -453,6 +472,7 @@
     }
     .cookie.show { display: block; }
     .cookie p { font-size: .92rem; }
+    .cookie p a { color: var(--ink); font-weight: 600; }
     .cookie-actions { display: flex; gap: 10px; flex-wrap: wrap; }
     .cookie .btn { padding: 10px 18px; font-size: .92rem; }
 
@@ -516,6 +536,9 @@
   </style>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WCJP88J8" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <a class="skip" href="#turinys">Pereiti prie turinio</a>
   <div class="progress" aria-hidden="true"></div>
 
@@ -995,7 +1018,7 @@
       <div class="wordmark" aria-hidden="true">NOVARO</div>
       <div class="footer-bottom">
         <span>© <span id="year">2026</span> Novaro Digital · Svetainės · Google Ads · Meta reklama · Automatizacijos</span>
-        <button type="button" id="cookie-settings" hidden>Slapukų nustatymai</button>
+        <button type="button" data-cookie-settings hidden>Slapukų nustatymai</button>
       </div>
       <div class="footer-legal">
         <span>MB Wellbeing solutions · Įm. k. 306247811 · PVM k. LT100015755319 · <a href="mailto:info@novarodigital.lt">info@novarodigital.lt</a></span>
@@ -1005,17 +1028,15 @@
   </footer>
 
   <div class="cookie" id="cookie" role="dialog" aria-live="polite" aria-label="Slapukų sutikimas">
-    <p><strong>Slapukai 🍪</strong> Naudojame analitinius slapukus, kad suprastume, kaip lankytojai naudojasi svetaine. Juos įjungsime tik jums sutikus.</p>
+    <p><strong>Slapukai 🍪</strong> Naudojame analitinius (Google Analytics) ir rinkodaros (Meta Pixel) slapukus, kad suprastume, kaip lankytojai naudojasi svetaine, ir matuotume reklamos rezultatus. Juos įjungsime tik jums sutikus. <a href="privatumo-politika/">Plačiau</a></p>
     <div class="cookie-actions">
       <button class="btn btn-lime" type="button" data-consent="granted">Sutinku</button>
       <button class="btn" type="button" data-consent="denied">Atsisakyti</button>
     </div>
   </div>
 
+  <script src="tracking.js?v=1" defer></script>
   <script>
-    // ========== KEISTI: įrašykite savo Google Analytics ID (pvz. 'G-ABC123XYZ'), arba palikite tuščią ==========
-    const GA_ID = '';
-
     const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
     const finePointer = matchMedia('(hover: hover) and (pointer: fine)').matches;
 
@@ -1169,6 +1190,15 @@
     Object.values(calc).forEach(el => el.addEventListener('input', updateCalc));
     updateCalc();
 
+    // Analitika: „calculator_used“ – tik pirmą kartą pakeitus bet kurį skaičiuoklės laukelį
+    let calcTracked = false;
+    const trackCalc = () => {
+      if (calcTracked) return;
+      calcTracked = true;
+      window.dataLayer.push({ event: 'calculator_used' });
+    };
+    Object.values(calc).forEach(el => { el.addEventListener('input', trackCalc); el.addEventListener('change', trackCalc); });
+
     // Skaičiuoklės duomenys perkeliami į formą
     document.getElementById('calc-cta').addEventListener('click', () => {
       const budget = +calc.budget.value;
@@ -1210,7 +1240,8 @@
         status.classList.add('ok');
         form.reset();
         fields['form_started'].value = Math.floor(Date.now() / 1000);
-        if (window.gtag) gtag('event', 'generate_lead');
+        // Analitika: tik po sėkmingo išsiuntimo ir parodyto padėkos pranešimo. Formos turinio (vardo, el. pašto) neperduodame.
+        window.dataLayer.push({ event: 'generate_lead', form_id: 'nemokamas-auditas' });
       } catch (err) {
         status.textContent = err.message || 'Nepavyko išsiųsti. Parašykite mums el. paštu.';
         status.classList.add('err');
@@ -1219,43 +1250,6 @@
       }
     });
 
-    // Slapukų sutikimas + Google Analytics (įkeliama tik jei nurodytas GA_ID ir lankytojas sutiko)
-    if (GA_ID) {
-      const KEY = 'site_analytics_consent';
-      const banner = document.getElementById('cookie');
-      const settingsBtn = document.getElementById('cookie-settings');
-      const read = () => { try { return localStorage.getItem(KEY); } catch { return null; } };
-      const save = v => { try { localStorage.setItem(KEY, v); } catch {} };
-      let loaded = false;
-
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function () { dataLayer.push(arguments); };
-      gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
-
-      const apply = value => {
-        gtag('consent', 'update', { analytics_storage: value });
-        if (value === 'granted' && !loaded) {
-          loaded = true;
-          const s = document.createElement('script');
-          s.async = true;
-          s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
-          document.head.appendChild(s);
-          gtag('js', new Date());
-          gtag('config', GA_ID, { anonymize_ip: true });
-        }
-      };
-
-      settingsBtn.hidden = false;
-      settingsBtn.addEventListener('click', () => banner.classList.add('show'));
-      banner.querySelectorAll('[data-consent]').forEach(btn => btn.addEventListener('click', () => {
-        save(btn.dataset.consent);
-        apply(btn.dataset.consent);
-        banner.classList.remove('show');
-      }));
-
-      const saved = read();
-      if (saved) apply(saved); else banner.classList.add('show');
-    }
   </script>
 </body>
 </html>

@@ -3,6 +3,26 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- Google Consent Mode v2: kol lankytojas nesutiko, viskas atmesta. Turi būti PRIEŠ GTM. Raktas sutampa su tracking.js -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied', wait_for_update: 500 });
+    try {
+      if (localStorage.getItem('novaro_cookie_consent') === 'granted') {
+        gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted' });
+      }
+    } catch (e) {}
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WCJP88J8');</script>
+  <!-- End Google Tag Manager -->
+
   <title>Privatumo politika – Novaro Digital</title>
   <meta name="description" content="Kaip Novaro Digital (MB Wellbeing solutions) tvarko per svetainės formą pateiktus asmens duomenis.">
   <meta name="robots" content="index,follow">
@@ -55,6 +75,21 @@
     footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; }
     footer a { color: #c9c9d1; }
     footer a:hover { color: var(--lime); }
+    footer .links { display: flex; gap: 16px; }
+    footer button { background: none; border: 0; color: inherit; font: inherit; text-decoration: underline; cursor: pointer; padding: 0; }
+    footer button:hover { color: var(--lime); }
+
+    /* Slapukų juosta – tokia pati kaip pagrindiniame puslapyje */
+    .cookie {
+      position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 140; max-width: 520px; margin-left: auto;
+      background: var(--white); border: var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 22px; display: none;
+    }
+    .cookie.show { display: block; }
+    .cookie p { font-size: .92rem; margin: 0 0 1em; }
+    .cookie p a { font-weight: 600; }
+    .cookie-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .cookie .btn { cursor: pointer; }
+    .btn-light { background: var(--white); }
 
     @media (max-width: 640px) {
       .doc { padding: 26px 20px; }
@@ -64,6 +99,9 @@
   </style>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WCJP88J8" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <!-- JUODRAŠTIS: tekstą turi peržiūrėti savininkas prieš paleidimą -->
   <header class="top">
     <div class="wrap">
@@ -78,7 +116,7 @@
     <div class="head">
       <span class="eyebrow">Privatumas</span>
       <h1>Privatumo politika</h1>
-      <p class="updated">Atnaujinta: 2026-10-28</p>
+      <p class="updated">Atnaujinta: 2026-10-29</p>
     </div>
 
     <article class="doc">
@@ -103,12 +141,13 @@
       <p>Apsaugai nuo pakartotinio automatinio formos siuntimo serveris trumpam (apie 30 sekundžių) išsaugo užšifruotą jūsų IP adreso žymą.</p>
 
       <h2>3. Kam naudojame duomenis</h2>
-      <p>Tik tam, kad atsakytume į jūsų užklausą ir parengtume nemokamą auditą. Duomenų neparduodame ir nenaudojame kitiems tikslams.</p>
+      <p>Tik tam, kad atsakytume į jūsų užklausą ir parengtume nemokamą auditą. Duomenų neparduodame ir nenaudojame kitiems tikslams. Formos turinio (vardo, el. pašto, telefono ir kt.) Google ar Meta neperduodame – jums sutikus, jiems perduodama tik tai, kad užklausa buvo išsiųsta.</p>
 
       <h2>4. Teisinis pagrindas</h2>
       <ul>
         <li>jūsų sutikimas, kurį duodate siųsdami formą (BDAR 6 str. 1 d. a punktas);</li>
-        <li>veiksmai, kurių jūsų prašymu imamės prieš sudarant sutartį, pavyzdžiui, audito ir pasiūlymo parengimas (BDAR 6 str. 1 d. b punktas).</li>
+        <li>veiksmai, kurių jūsų prašymu imamės prieš sudarant sutartį, pavyzdžiui, audito ir pasiūlymo parengimas (BDAR 6 str. 1 d. b punktas);</li>
+        <li>analitiniams ir rinkodaros slapukams – jūsų sutikimas, kurį duodate slapukų juostoje (BDAR 6 str. 1 d. a punktas).</li>
       </ul>
 
       <h2>5. Kiek laiko saugome</h2>
@@ -117,11 +156,14 @@
       <h2>6. Kas tvarko duomenis mūsų pavedimu</h2>
       <ul>
         <li><strong>Hostinger</strong> – svetainės ir el. pašto talpinimas. Per formą pateikti duomenys perduodami el. paštu ir saugomi Hostinger serveriuose.</li>
-        <li><strong>Google</strong> – svetainės šriftai įkeliami iš Google Fonts, todėl jūsų naršyklė perduoda Google jūsų IP adresą. Jei sutinkate su analitiniais slapukais, naudojama ir Google Analytics (žr. 7 punktą).</li>
+        <li><strong>Google</strong> (Google Ireland Limited) – svetainės šriftai įkeliami iš Google Fonts, o matavimo įrankius įkelia Google Tag Manager, todėl jūsų naršyklė perduoda Google jūsų IP adresą. Jums sutikus, Google Analytics 4 tvarko duomenis apie apsilankymą: peržiūrėtus puslapius, paspaudimus, įrenginį, naršyklę ir apytikslę vietą.</li>
+        <li><strong>Meta</strong> (Meta Platforms Ireland Limited) – jums sutikus, Meta Pixel perduoda Meta duomenis apie apsilankymą ir veiksmus svetainėje (pvz., užklausos išsiuntimą ar paspaudimą ant telefono numerio), kad galėtume matuoti ir gerinti reklamą Facebook ir Instagram.</li>
       </ul>
+      <p>Google ir Meta duomenis gali perduoti už Europos ekonominės erdvės ribų (pvz., į JAV). Tokiam perdavimui taikomos ES ir JAV duomenų privatumo sistemos arba Europos Komisijos patvirtintų standartinių sutarčių sąlygų apsaugos priemonės.</p>
 
-      <h2>7. Slapukai ir analitika</h2>
-      <p>Analitinius slapukus (Google Analytics) įjungiame tik jums sutikus slapukų juostoje. Kol sutikimo nedavėte, analitika neveikia. Jūsų pasirinkimas išsaugomas jūsų naršyklėje, o sutikimą galite bet kada pakeisti paspaudę „Slapukų nustatymai“ svetainės apačioje.</p>
+      <h2>7. Slapukai, analitika ir rinkodara</h2>
+      <p>Analitinius (Google Analytics 4) ir rinkodaros (Meta Pixel) slapukus naudojame tik jums sutikus slapukų juostoje. Kol sutikimo nedavėte arba jei paspaudėte „Atsisakyti“, šie įrankiai neįsijungia ir slapukų nerašo – tam naudojame Google sutikimo režimą (Consent Mode).</p>
+      <p>Jūsų pasirinkimas išsaugomas jūsų naršyklėje. Sutikimą galite bet kada atšaukti ar pakeisti: svetainės apačioje (poraštėje) paspauskite „Slapukų nustatymai“ ir pasirinkite „Atsisakyti“ arba „Sutinku“. Atšaukimas neturi įtakos iki tol atliktam tvarkymui.</p>
 
       <h2>8. Jūsų teisės</h2>
       <p>Jūs turite teisę:</p>
@@ -140,8 +182,18 @@
   <footer>
     <div class="wrap">
       <span>MB Wellbeing solutions · Įm. k. 306247811 · PVM k. LT100015755319 · <a href="mailto:info@novarodigital.lt">info@novarodigital.lt</a></span>
-      <a href="../">Novaro Digital</a>
+      <span class="links"><button type="button" data-cookie-settings hidden>Slapukų nustatymai</button><a href="../">Novaro Digital</a></span>
     </div>
   </footer>
+
+  <div class="cookie" id="cookie" role="dialog" aria-live="polite" aria-label="Slapukų sutikimas">
+    <p><strong>Slapukai 🍪</strong> Naudojame analitinius (Google Analytics) ir rinkodaros (Meta Pixel) slapukus, kad suprastume, kaip lankytojai naudojasi svetaine, ir matuotume reklamos rezultatus. Juos įjungsime tik jums sutikus. <a href="./">Plačiau</a></p>
+    <div class="cookie-actions">
+      <button class="btn" type="button" data-consent="granted">Sutinku</button>
+      <button class="btn btn-light" type="button" data-consent="denied">Atsisakyti</button>
+    </div>
+  </div>
+
+  <script src="../tracking.js?v=1" defer></script>
 </body>
 </html>
